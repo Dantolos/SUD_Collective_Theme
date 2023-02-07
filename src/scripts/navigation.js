@@ -17,3 +17,4 @@ function navigationMinimze() {
         NAVIGATIONPLACEHOLDER.style.height = '180px';
       }
 }
+

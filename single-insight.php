@@ -6,8 +6,6 @@ $eventID = get_the_ID();
 
 <div class="event-body">
     <div class="event-container">
-
-   
        <?php
 
         echo '<div class="event-image-header">';

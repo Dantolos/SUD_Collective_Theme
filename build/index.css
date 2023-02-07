@@ -110,8 +110,8 @@ h5 {
   font-weight: bold;
 }
 
-p {
-  font-size: clamp(14px, 1.5rem, 16px);
+div, p, a {
+  font-size: clamp(14px, 1.5rem, 16px) !important;
   line-height: clamp(26px, 1.8rem, 38px);
   margin-bottom: 20px;
 }
@@ -223,21 +223,53 @@ a:hover {
   padding: 5vh 5vw;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .event-body .event-container {
-  min-height: 500px;
-  width: 100%;
-  max-width: 800px;
+  min-height: 400px;
+  width: clamp(600px, 50%, 95vw);
+  margin-bottom: 20px;
   background-color: white;
+}
+.event-body .event-container .event-image-header {
+  width: 100%;
+  height: 400px;
 }
 .event-body .event-container .event-image-header img {
   width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .event-body .event-container .event-content {
   padding: 5vh 5vw;
 }
 .event-body .event-container .event-content h2 {
   margin: 20px 0;
+}
+@media (max-width: 1024px) {
+  .event-body .event-container {
+    min-width: 95vw;
+  }
+}
+.event-body .event-sidebar {
+  background-color: white;
+  margin-left: 2%;
+  width: clamp(200px, 25%, 95vw);
+  padding: 20px;
+}
+@media (max-width: 1024px) {
+  .event-body .event-sidebar {
+    min-width: 95vw;
+    margin-left: 0;
+  }
+}
+.event-body .event-sidebar .event-fact-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.event-body .event-sidebar .event-fact-row .event-fact-column {
+  width: 50%;
 }
 
 /*# sourceMappingURL=index.css.map*/

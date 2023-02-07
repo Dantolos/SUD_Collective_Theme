@@ -72,6 +72,24 @@ if( function_exists('acf_add_local_field_group') ):
                 'prepend' => '',
                 'append' => 'px',
             ),
+            array(
+                'key' => 'field_63e275befc1af',
+                'label' => 'Background Color',
+                'name' => 'background_color',
+                'aria-label' => '',
+                'type' => 'color_picker',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '#fef7ff',
+                'enable_opacity' => 0,
+                'return_format' => 'string',
+            ),
         ),
         'location' => array(
             array(

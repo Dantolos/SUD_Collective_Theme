@@ -28,8 +28,8 @@ h5 {
     font-weight: bold;
 }
 
-p {
-    font-size: clamp( 14px, 1.5rem, 16px);
+div, p, a {
+    font-size: clamp( 14px, 1.5rem, 16px) !important;
     line-height: clamp( 26px, 1.8rem, 38px);
     margin-bottom: 20px;
 }

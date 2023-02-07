@@ -29,17 +29,18 @@ $dateFormat = new \sud\helper\date\Date_Format;
 ?>
 
 
-<div <?php echo $anchor; ?>class="<?php echo esc_attr( $class_name ); ?> partner-grid-container" style="">
+<div <?php echo $anchor; ?>class="<?php echo esc_attr( $class_name ); ?> partner-grid-container">
     <?php
     if( is_array($partners)) {
         foreach($partners as $partner){
-            echo '<div class="partner-card" style="min-width:'.$minWidth.'px; width:'.$columnWidht.'%;">';
+            echo '<div class="partner-card" style="min-width:'.$minWidth.'px; width:'.$columnWidht.'%; background-color:'. get_field('background_color').';" >';
                 echo '<img src="'.esc_url(get_field('logo', $partner)['url']).'" alt="'.esc_attr(get_field('company', $partner)).'" />';
-
             echo '</div>';
         }
     } else {
         echo '<h4>'.$partners.'</h4>';
     }
+   
+     
     ?>
 </div>
