@@ -1,0 +1,14 @@
+{
+    "name": "acf/insights-teaser",
+    "title": "Insights Teaser",
+    "description": "Show upcoming events.",
+    "style": [ "file:./insights-teaser.css" ],
+    "category": "SUD Collective",
+    "icon": "lightbulb",
+    "keywords": ["insights", "teaser", "sud"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "./insights-teaser.php"
+    },
+    "align": "full"
+}

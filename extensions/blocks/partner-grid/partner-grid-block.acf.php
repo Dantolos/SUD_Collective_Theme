@@ -1,0 +1,96 @@
+<?php
+if( function_exists('acf_add_local_field_group') ):
+
+    acf_add_local_field_group(array(
+        'key' => 'group_63e207d225b7b',
+        'title' => 'Block | Partner Grid',
+        'fields' => array(
+            array(
+                'key' => 'field_63e207d2be3d7',
+                'label' => 'Partner',
+                'name' => 'partner',
+                'aria-label' => '',
+                'type' => 'post_object',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'partner',
+                ),
+                'taxonomy' => '',
+                'return_format' => 'id',
+                'multiple' => 1,
+                'allow_null' => 0,
+                'ui' => 1,
+            ),
+            array(
+                'key' => 'field_63e21b02be3d8',
+                'label' => 'Colums',
+                'name' => 'colums',
+                'aria-label' => '',
+                'type' => 'number',
+                'instructions' => 'max. amount of colums',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => 3,
+                'min' => '',
+                'max' => '',
+                'placeholder' => '',
+                'step' => 1,
+                'prepend' => '',
+                'append' => '',
+            ),
+            array(
+                'key' => 'field_63e21b56be3d9',
+                'label' => 'Width',
+                'name' => 'width',
+                'aria-label' => '',
+                'type' => 'number',
+                'instructions' => 'min-width of column',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'min' => 50,
+                'max' => 1200,
+                'placeholder' => '',
+                'step' => 1,
+                'prepend' => '',
+                'append' => 'px',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'block',
+                    'operator' => '==',
+                    'value' => 'acf/partner-grid',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+        'show_in_rest' => 0,
+    ));
+    
+    endif;		

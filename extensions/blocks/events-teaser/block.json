@@ -1,0 +1,14 @@
+{
+    "name": "acf/events-teaser",
+    "title": "Events Teaser",
+    "description": "Show upcoming events.",
+    "style": [ "file:./events-teaser.css" ],
+    "category": "SUD Collective",
+    "icon": "tickets-alt",
+    "keywords": ["events", "teaser", "sud"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "./events-teaser.php"
+    },
+    "align": "full"
+}

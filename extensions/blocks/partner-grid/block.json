@@ -1,0 +1,15 @@
+{
+    "name": "acf/partner-grid",
+    "title": "Partner Grid",
+    "description": "Show a grid of partner.",
+    "style": [ "file:./partner-grid.css" ],
+    "category": "SUD Collective",
+    "script": "block-partner-grid",
+    "icon": "admin-links",
+    "keywords": ["partner", "grid", "sud"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "./partner-grid.php"
+    },
+    "align": "full"
+}

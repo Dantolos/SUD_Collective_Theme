@@ -1,0 +1,40 @@
+@import 'reset.scss';
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'fonts.scss';
+
+
+
+html, body {
+  background-color: #FFF;
+  font-family: "GTAlpina", Fallback, sans-serif;
+}
+
+body {
+ 
+  font-size: .9rem;
+  @include atSmall {
+    padding: 0px;
+    font-size: 1.1rem;
+  }
+  @include atMedium {
+    padding: 0px;
+    font-size: 1.2rem;
+  }
+}
+
+a:link, a:visited {
+  color: $primaryColor;
+  text-decoration: unset !important;
+  
+}
+
+a:hover {
+  color: $secondaryColor;
+}
+
+
+@import 'components/navigation.scss';
+@import 'components/footer.scss';
+
+@import 'templates/events.scss';

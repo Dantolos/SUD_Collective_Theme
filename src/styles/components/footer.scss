@@ -1,0 +1,13 @@
+#footer-container {
+    background-color: $thirdColor;
+    height:366px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 40px 5vw;
+
+    .footer-row {
+        min-width: 300px;
+        width: 50%;
+    }
+}

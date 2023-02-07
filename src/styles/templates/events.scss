@@ -1,0 +1,30 @@
+/* SINGLE PAGE */
+
+.event-body {
+    background-color:rgba($secondaryColor, 0.08);
+    min-height:80vh;
+    padding: 5vh 5vw;
+    display: flex;
+    justify-content: center;
+
+    .event-container {
+        min-height: 500px;
+        width:100%;
+        max-width: 800px;
+        background-color: white;
+        //margin: 5vh;
+
+        .event-image-header {
+            img{
+                width:100%;
+            }
+            
+        }
+
+        .event-content {
+            padding: 5vh 5vw;
+
+            h2 { margin: 20px 0; }
+        }
+    }
+}
