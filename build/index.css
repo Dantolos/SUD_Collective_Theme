@@ -146,6 +146,18 @@ a:hover {
   color: #7C70B1;
 }
 
+.has-primary-color-color {
+  color: #942F6D;
+}
+
+.has-second-color-color {
+  color: #7C70B1;
+}
+
+.has-third-color-color {
+  color: #C3B1D7;
+}
+
 * {
   transform: all();
   transition-duration: 200ms;
@@ -155,6 +167,7 @@ a:hover {
   position: fixed;
   width: 100vw;
   z-index: 100;
+  top: 0;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -175,6 +188,11 @@ a:hover {
 }
 #navigation-container nav a {
   margin: 0 10px;
+}
+@media (max-width: 1024px) {
+  #navigation-container nav {
+    display: none;
+  }
 }
 
 .nav-big .nav-logo {
@@ -197,10 +215,83 @@ a:hover {
   top: 5px;
   display: block;
 }
+@media (max-width: 1024px) {
+  .nav-small .nav-icon {
+    margin: 8px 0;
+  }
+}
 
 .nav-placeholder {
   height: 180px;
   width: 100vw;
+}
+@media (max-width: 1024px) {
+  .nav-placeholder {
+    height: 140px;
+  }
+}
+
+.burger-icon {
+  display: none;
+  height: 50px;
+  width: 50px;
+  margin: 20px 5vw;
+  cursor: pointer;
+}
+.burger-icon img {
+  height: 100%;
+  width: 100%;
+}
+@media (max-width: 1024px) {
+  .burger-icon {
+    display: block;
+  }
+}
+
+#mobile-navigation {
+  visibility: hidden;
+  opacity: 0;
+  z-index: 105 !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #942F6D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#mobile-navigation .burger-ico-close {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  width: 50px;
+  height: 50px;
+}
+#mobile-navigation .burger-ico-close:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+#mobile-navigation #navigation-menu-mobile {
+  width: 60%;
+  min-height: 60vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#mobile-navigation #navigation-menu-mobile a {
+  text-align: center;
+  margin-bottom: 10px;
+}
+#mobile-navigation #navigation-menu-mobile h2 {
+  color: white !important;
+  margin: 5rem 0;
+}
+#mobile-navigation #navigation-menu-mobile h2:hover {
+  transform: scale(1.05);
+  color: #C3B1D7 !important;
 }
 
 #footer-container {

@@ -141,6 +141,11 @@ function mytheme_setup_theme_supported_features() {
           'slug' => 'secondary-color',
           'color' => '#7C70B1',
       ),
+      array(
+        'name' => esc_attr__( 'third color', 'SUD_Theme' ),
+        'slug' => 'third-color',
+        'color' => '#C3B1D7',
+    ),
       
       
   ) );

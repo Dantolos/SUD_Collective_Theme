@@ -24,7 +24,7 @@ $breakpoints: (
 
   // Wenn ihr oben einen Wert eingetragen habt wird hier gecheckt ob ihr einen Einheit angehängt habt. Falls nicht wird px genutzt.
   @else if unitless($breakpoint) {
-    $breakpoint: $breakpoint +0px;
+    $breakpoint: $breakpoint + 0px;
 
     // Ausgabe
     @media (#{$direction}-width: $breakpoint) {

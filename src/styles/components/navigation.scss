@@ -6,7 +6,7 @@ transition-duration: 200ms;
     position:fixed;
     width:100vw;
     z-index:100;
-    
+    top:0;
     display: flex;
 
     flex-direction: row;
@@ -31,6 +31,11 @@ transition-duration: 200ms;
         a {
             margin: 0 10px;
         }
+
+        @include breakpoint( 'm' ){
+            display: none;
+        }
+       
     }
    
 
@@ -59,10 +64,78 @@ transition-duration: 200ms;
         left:5vw;
         top:5px;
         display: block;
+        @include breakpoint( 'm' ){
+            margin: 8px 0;
+        }
+        
     }
 }
 
 .nav-placeholder {
     height:180px;
     width: 100vw;
+    @include breakpoint( 'm' ){
+        height:140px;
+    }
+}
+
+.burger-icon {
+    display: none;
+    height:50px;
+    width:50px;
+    margin: 20px 5vw;
+    cursor: pointer;
+    img { height:100%; width:100%;}
+
+    @include breakpoint( 'm' ){
+        display: block;
+    }
+}
+
+#mobile-navigation {
+    visibility: hidden;
+    opacity:0;
+
+    z-index: 105 !important;
+    position:fixed;
+    top:0;left:0;
+    width:100vw;
+    height: 100vh;
+    background-color:$primaryColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .burger-ico-close {
+        position: absolute;
+        top:50px;
+        right:50px;
+        width:50px;
+        height:50px;
+        &:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+    }
+
+    #navigation-menu-mobile {
+        width: 60%;
+        min-height: 60vh;
+        color: white;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-around;
+        a {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color:white !important;
+            margin: 5rem 0;
+            &:hover {
+                transform: scale(1.05);
+                color:$thirdColor !important;
+            }
+        }
+    }
 }

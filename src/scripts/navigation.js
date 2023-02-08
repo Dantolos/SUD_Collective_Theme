@@ -18,3 +18,19 @@ function navigationMinimze() {
       }
 }
 
+ 
+/* mobile Navi */
+const MOBILENAVIGATIN = document.getElementById('mobile-navigation');
+const BURGERBUTTON = document.getElementById('burger-button');
+const CLOSEBUTTON = document.getElementById('menu-close-button');
+
+BURGERBUTTON.addEventListener('click', () => {
+  MOBILENAVIGATIN.style.visibility = 'visible';
+  MOBILENAVIGATIN.style.opacity = '1';
+
+})
+
+CLOSEBUTTON.addEventListener('click', () => {
+  MOBILENAVIGATIN.style.visibility = 'hidden';
+  MOBILENAVIGATIN.style.opacity = '0';
+})
