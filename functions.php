@@ -131,20 +131,25 @@ add_action( 'after_setup_theme', 'SUD_register_nav_menus' );
 /*-------------------------------------------------------------*/
 function mytheme_setup_theme_supported_features() {
   add_theme_support( 'editor-color-palette', array(
-      array(
-          'name' => esc_attr__( 'primary color', 'SUD_Theme' ),
-          'slug' => 'primary-color',
-          'color' => '#942F6D',
-      ),
-      array(
-          'name' => esc_attr__( 'secondary color', 'SUD_Theme' ),
-          'slug' => 'secondary-color',
-          'color' => '#7C70B1',
-      ),
-      array(
-        'name' => esc_attr__( 'third color', 'SUD_Theme' ),
-        'slug' => 'third-color',
-        'color' => '#C3B1D7',
+    array(
+        'name' => esc_attr__( 'primary color', 'SUD_Theme' ),
+        'slug' => 'primary-color',
+        'color' => '#942F6D',
+    ),
+    array(
+        'name' => esc_attr__( 'secondary color', 'SUD_Theme' ),
+        'slug' => 'secondary-color',
+        'color' => '#7C70B1',
+    ),
+    array(
+      'name' => esc_attr__( 'third color', 'SUD_Theme' ),
+      'slug' => 'third-color',
+      'color' => '#C3B1D7',
+    ),
+    array(
+      'name' => esc_attr__( 'dark color', 'SUD_Theme' ),
+      'slug' => 'dark-color',
+      'color' => '#3C1438',
     ),
       
       
@@ -167,13 +172,15 @@ remove_action('welcome_panel', 'wp_welcome_panel');
 function theme_add_scripts() 
 {
     $JsIncList = array(
+      
         array('navi-js', 'navigation.js' ),
-        
+        array('anchor-js', 'inc/anchor.js' ),
+        array('main-js', 'main.js' ),
     );
 
     foreach ($JsIncList as $JsInc) 
     {
-        wp_enqueue_script( $JsInc[0], get_template_directory_uri() . '/src/scripts/' . $JsInc[1], array('jquery'), '1.0.00', true );
+        wp_enqueue_script( $JsInc[0], get_template_directory_uri() . '/src/scripts/' . $JsInc[1], array('jquery'), '1.0.01', true );
     }
 
 

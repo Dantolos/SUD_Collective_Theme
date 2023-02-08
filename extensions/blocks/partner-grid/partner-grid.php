@@ -33,7 +33,7 @@ $dateFormat = new \sud\helper\date\Date_Format;
     <?php
     if( is_array($partners)) {
         foreach($partners as $partner){
-            echo '<div class="partner-card" style="min-width:'.$minWidth.'px; width:'.$columnWidht.'%; background-color:'. get_field('background_color').';" >';
+            echo '<div class="partner-card" data-partner="'.$partner.'" style="min-width:'.$minWidth.'px; width:'.$columnWidht.'%; background-color:'. get_field('background_color').';" >';
                 echo '<img src="'.esc_url(get_field('logo', $partner)['url']).'" alt="'.esc_attr(get_field('company', $partner)).'" />';
             echo '</div>';
         }

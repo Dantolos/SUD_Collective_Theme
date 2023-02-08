@@ -89,10 +89,12 @@ button:hover {
 }
 
 h1 {
+  color: #3C1438;
   font-size: clamp(46px, 5rem, 64px);
 }
 
 h2 {
+  color: #3C1438;
   font-size: clamp(32px, 3rem, 46px);
 }
 
@@ -150,12 +152,16 @@ a:hover {
   color: #942F6D;
 }
 
-.has-second-color-color {
+.has-secondary-color-color {
   color: #7C70B1;
 }
 
 .has-third-color-color {
   color: #C3B1D7;
+}
+
+.has-dark-color-color {
+  color: #3C1438;
 }
 
 * {
