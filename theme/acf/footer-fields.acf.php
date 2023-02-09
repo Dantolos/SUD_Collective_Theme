@@ -15,7 +15,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
-                    'width' => '',
+                    'width' => '50',
                     'class' => '',
                     'id' => '',
                 ),
@@ -24,6 +24,29 @@ if( function_exists('acf_add_local_field_group') ):
                 'toolbar' => 'full',
                 'media_upload' => 1,
                 'delay' => 0,
+            ),
+            array(
+                'key' => 'field_63e512e60896b',
+                'label' => 'Partner',
+                'name' => 'partner',
+                'aria-label' => '',
+                'type' => 'post_object',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '50',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'partner',
+                ),
+                'taxonomy' => '',
+                'return_format' => 'id',
+                'multiple' => 1,
+                'allow_null' => 0,
+                'ui' => 1,
             ),
         ),
         'location' => array(
