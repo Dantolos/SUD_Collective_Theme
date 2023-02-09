@@ -8,8 +8,7 @@ $eventID = get_the_ID();
     <div class="event-container">
        <?php
 
-        echo '<div class="event-image-header">';
-        echo '</div>';
+      
         
         echo '<div class="event-content">';
             echo '<h1>'. get_the_title().'</h1>';

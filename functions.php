@@ -175,14 +175,30 @@ function theme_add_scripts()
       
         array('navi-js', 'navigation.js' ),
         array('anchor-js', 'inc/anchor.js' ),
+        array('partner-js', 'inc/partner.js' ),
         array('main-js', 'main.js' ),
     );
 
     foreach ($JsIncList as $JsInc) 
     {
-        wp_enqueue_script( $JsInc[0], get_template_directory_uri() . '/src/scripts/' . $JsInc[1], array('jquery'), '1.0.01', true );
+        wp_enqueue_script( $JsInc[0], get_template_directory_uri() . '/src/scripts/' . $JsInc[1], array('jquery'), '1.0.02', true );
     }
 
+
+    /*------------------------------Send Global Variables---------------------------*/
+
+    $wnm_custom = array( 
+        'templateUrl' => get_template_directory_uri(), 
+        'sitename' => get_bloginfo('name'),
+
+        //'info' => $quickInfoAktiv
+    );
+    
+    
+    $scriptToAdGlobal = array('main-js', 'partner-js' );
+    foreach( $scriptToAdGlobal as $script ){
+        wp_localize_script( $script, 'globalURL', $wnm_custom );
+    }
 
 }
 add_action( 'wp_enqueue_scripts', 'theme_add_scripts' );
@@ -203,3 +219,6 @@ add_action( 'init', 'sud_register_block_script' );
 function sud_register_block_script() {
   wp_register_script( 'block-partner-grid', get_template_directory_uri() . '/extensions/blocks/partner-grid/partner-grid.js', [ 'jquery', 'acf' ] );
 }
+
+
+// Change template directory

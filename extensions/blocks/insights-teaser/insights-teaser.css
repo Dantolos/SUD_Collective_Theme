@@ -7,12 +7,14 @@
 }
 
 .insight-card {
-    max-width: 300px;
+    width: 27%;
+    min-width: 300px;
+    margin: 3%;
 }
 
 .insight-card > img {
     max-width: 50%;
-    margin:10% 25% ;
+    margin:10% 25%;
 }
 
 button.extern-insight::before {

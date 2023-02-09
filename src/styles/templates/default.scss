@@ -1,0 +1,15 @@
+.default-container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
+    padding: 10vw;
+
+    @include breakpoint('m'){
+
+    }
+
+    .default-content {
+        width:80vw;
+    }
+}

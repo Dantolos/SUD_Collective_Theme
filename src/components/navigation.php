@@ -2,7 +2,7 @@
 
 namespace sud\components\navigation;
 
-class Navigarionbar {
+class Navigationbar {
     public $html = '';
     
 

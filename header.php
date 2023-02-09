@@ -27,10 +27,10 @@
     </style>
   </head>
   <body <?php body_class(); ?>>
-    <div id="navigation"></div>
+ 
 
     <?php
       //add navigationbar
-      $navigationBar = new \sud\components\navigation\Navigarionbar;
+      $navigationBar = new \sud\components\navigation\Navigationbar;
       echo $navigationBar->html;
-    ?> 
+    ?>  

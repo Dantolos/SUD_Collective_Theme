@@ -4,7 +4,9 @@
 @import 'fonts.scss';
 @import 'responsive.scss';
 
+@import 'bootstrap.scss';
 
+@import 'inc/lightbox.scss';
 
 html, body {
   background-color: #FFF;
@@ -51,8 +53,9 @@ a:hover {
   color:#3C1438;
 }
 
+@import 'templates/events.scss';
+@import 'templates/default.scss';
 
 @import 'components/navigation.scss';
 @import 'components/footer.scss';
 
-@import 'templates/events.scss';

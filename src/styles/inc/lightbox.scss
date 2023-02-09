@@ -1,0 +1,61 @@
+.sud-lightbox-container {
+    z-index: 150;
+    position: fixed;
+    width:100vw;
+    height:100vh;
+    top:0;
+    left:0;
+    background-color:rgba(255,255,255,.2);
+   
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .lightbox-close-button{
+        position: absolute;
+        top:5vw;right:5vw;
+        svg {
+            width:40px;
+            height:40px;
+        }
+
+        &:hover{
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+    }
+
+    .sud-lightbox {
+        background-color:white;
+        width: 80vw;
+        max-height: 80vh;
+        border-radius: 20px;
+        //overflow-y: scroll;
+
+        .sud-lightbox-content {
+            width:100%;
+            height:100%;
+        }
+    }
+    
+}
+
+
+//PARTNER LIGHTBOX
+.partner-lightbox {
+
+    padding:10%;
+    
+    .partner-lightbox-logo {
+        max-height:200px;
+        max-width: 400px;
+        margin: 20px 0 50px 0;
+    }
+
+    h2 {
+        margin-bottom:20px;
+    }
+}

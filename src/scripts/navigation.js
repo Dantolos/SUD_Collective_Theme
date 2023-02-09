@@ -3,7 +3,7 @@
 const NAVIGATIONCONTAINER = document.querySelector('#navigation-container');
 const NAVIGATIONPLACEHOLDER = document.querySelector('.nav-placeholder');
 
-window.onscroll = function() {navigationMinimze()};
+window.onscroll = function() { setTimeout( () => {navigationMinimze()}, 300 )};
 window.onload = function() {navigationMinimze()};
 
 function navigationMinimze() {
@@ -11,6 +11,7 @@ function navigationMinimze() {
         NAVIGATIONCONTAINER.classList.remove('nav-big')
         NAVIGATIONCONTAINER.classList.add('nav-small')
         NAVIGATIONPLACEHOLDER.style.height = '50px';
+        
       } else {
         NAVIGATIONCONTAINER.classList.add('nav-big')
         NAVIGATIONCONTAINER.classList.remove('nav-small')

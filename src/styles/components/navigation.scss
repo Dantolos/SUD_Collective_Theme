@@ -5,15 +5,18 @@ transition-duration: 200ms;
 #navigation-container {
     position:fixed;
     width:100vw;
+   
     z-index:100;
     top:0;
     display: flex;
 
+    margin:0;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 
-    
+    background-color: white;
+
     .nav-logo {
         max-height: 90px;
         max-width: 40vw;
@@ -71,9 +74,14 @@ transition-duration: 200ms;
     }
 }
 
+// PLACEHOLDER
 .nav-placeholder {
+
     height:180px;
     width: 100vw;
+    margin: 0;
+    
+    
     @include breakpoint( 'm' ){
         height:140px;
     }
