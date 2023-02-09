@@ -222,3 +222,9 @@ function sud_register_block_script() {
 
 
 // Change template directory
+
+
+function adminfavicon() {
+  echo '<link rel="icon" type="image/x-icon" href="'.get_field('icon', 'option')['url'].'" />';
+}
+add_action( 'admin_head', 'adminfavicon' );

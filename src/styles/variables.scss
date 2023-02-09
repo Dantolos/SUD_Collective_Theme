@@ -31,3 +31,40 @@ $dropshadow:1px 1px 26px -2px rgba(0, 0, 0, 0.2);
 button {
     @include primarybtn();
 }
+
+@mixin hideScrollbar {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.hideScrollbar {
+    @include hideScrollbar
+}
+
+
+@mixin scrollbars(
+  $size: 8px, 
+  $foreground-color: $thirdColor,
+  $background-color: none
+) {
+  // For Chrome & Safari
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // Standard version (Firefox only for now)
+  scrollbar-color: $foreground-color $background-color;
+}

@@ -83,6 +83,16 @@ button:hover {
   cursor: pointer;
 }
 
+.hideScrollbar {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hideScrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 :root {
   font-size: 1vw;
   color: #3C1438;
@@ -156,6 +166,18 @@ div, p, a {
   width: 80vw;
   max-height: 80vh;
   border-radius: 20px;
+  overflow-y: scroll;
+  scrollbar-color: #C3B1D7 none;
+}
+.sud-lightbox-container .sud-lightbox::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.sud-lightbox-container .sud-lightbox::-webkit-scrollbar-thumb {
+  background: #C3B1D7;
+}
+.sud-lightbox-container .sud-lightbox::-webkit-scrollbar-track {
+  background: none;
 }
 .sud-lightbox-container .sud-lightbox .sud-lightbox-content {
   width: 100%;
@@ -167,8 +189,14 @@ div, p, a {
 }
 .partner-lightbox .partner-lightbox-logo {
   max-height: 200px;
-  max-width: 400px;
+  max-width: 500px;
   margin: 20px 0 50px 0;
+}
+.partner-lightbox .partner-lightbox-logo img {
+  max-height: 200px;
+  height: auto;
+  max-width: 100%;
+  width: auto;
 }
 .partner-lightbox h2 {
   margin-bottom: 20px;
