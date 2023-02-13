@@ -26,6 +26,20 @@ $columnWidht = 100 / $columns - ( $columns * 2 );
 
 $dateFormat = new \sud\helper\date\Date_Format;
 
+if( get_field('order') ){
+    if (!function_exists('partner_order_by')) {
+        function partner_order_by($a, $b) { 
+            if( get_field('direction') === 'asc' ){
+                return (get_field('company', $a) < get_field('company', $b)) ? -1 : 1;   
+            }
+            return (get_field('company', $a) > get_field('company', $b)) ? -1 : 1;   
+        }
+    }
+    uasort($partners, 'partner_order_by');
+}
+
+
+
 ?>
 
 
@@ -39,8 +53,6 @@ $dateFormat = new \sud\helper\date\Date_Format;
         }
     } else {
         echo '<h4>'.$partners.'</h4>';
-    }
-   
-     
+    } 
     ?>
 </div>

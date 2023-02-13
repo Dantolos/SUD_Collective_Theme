@@ -7,11 +7,13 @@ class Event_Card{
 
     public function __construct($event){
         $dateFormat = new \sud\helper\date\Date_Format;
-
+        
         $this->html .= '<div class="event-card">';
             $this->html .= '<div class="eventcard-thumb">';
                 $this->html .= '<img src="'.get_field( 'Thumb', $event )['url'] .'" alt="'.esc_attr( get_field( 'Thumb', $event )['alt'] ).'">';
-                $this->html .= '<span>'.esc_html( $dateFormat->formating_Date_Language( get_field( 'facts', $event )['date'], 'date' ) ).'</span>';
+                if(get_field( 'facts', $event )['date']){
+                    $this->html .= '<span>'.esc_html( $dateFormat->formating_Date_Language( get_field( 'facts', $event )['date'], 'date' ) ).'</span>';
+                }
             $this->html .= '</div>';
 
             $this->html .= '<h4>'. esc_html( get_field( 'content', $event )['title'] ).'</h4>';      
