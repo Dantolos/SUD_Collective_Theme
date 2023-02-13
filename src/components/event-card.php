@@ -10,7 +10,7 @@ class Event_Card{
 
         $this->html .= '<div class="event-card">';
             $this->html .= '<div class="eventcard-thumb">';
-                $this->html .= '<img src="'.esc_url( get_field( 'Thumb', $event )['url'] ).'" alt="'.esc_attr( get_field( 'Thumb', $event )['alt'] ).'">';
+                $this->html .= '<img src="'.get_field( 'Thumb', $event )['url'] .'" alt="'.esc_attr( get_field( 'Thumb', $event )['alt'] ).'">';
                 $this->html .= '<span>'.esc_html( $dateFormat->formating_Date_Language( get_field( 'facts', $event )['date'], 'date' ) ).'</span>';
             $this->html .= '</div>';
 
