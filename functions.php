@@ -2,7 +2,7 @@
 
 function boilerplate_load_assets() {
   wp_enqueue_script('ourmainjs', get_theme_file_uri('/build/index.js'), array('wp-element'), '1.0', true);
-  wp_enqueue_style('ourmaincss', get_theme_file_uri('/build/index.css'));
+  wp_enqueue_style('ourmaincss', get_theme_file_uri('/build/index.css', '1.0.01'));
 }
 
 add_action('wp_enqueue_scripts', 'boilerplate_load_assets');
@@ -181,7 +181,7 @@ function theme_add_scripts()
 
     foreach ($JsIncList as $JsInc) 
     {
-        wp_enqueue_script( $JsInc[0], get_template_directory_uri() . '/src/scripts/' . $JsInc[1], array('jquery'), '1.0.02', true );
+        wp_enqueue_script( $JsInc[0], get_template_directory_uri() . '/src/scripts/' . $JsInc[1], array('jquery'), '1.0.03', true );
     }
 
 
