@@ -35,3 +35,10 @@ div, p, a {
     line-height: clamp( 26px, 1.8rem, 38px);
     margin-bottom: 20px;
 }
+
+ol {
+    list-style-position:outside; padding-left:5%; 
+    li{
+        margin-bottom: 2rem;
+    }
+}

@@ -4,7 +4,37 @@ $thirdColor: #C3B1D7;
 
 $darkColor: #3C1438;
 
+.has-primary-color-color {
+color:$primaryColor;
+}
 
+.has-secondary-color-color {
+color:$secondaryColor;
+}
+
+.has-third-color-color {
+color:$thirdColor;
+}
+
+.has-dark-color-color {
+color:$darkColor;
+}
+
+.has-primary-color-background-color {
+color:$primaryColor;
+}
+
+.has-secondary-color-background-color {
+color:$secondaryColor;
+}
+
+.has-third-color-background-color {
+color:$thirdColor;
+}
+
+.has-dark-color-background-color {
+color:$darkColor;
+}
 
 $dropshadow:1px 1px 26px -2px rgba(0, 0, 0, 0.2);
 :root { --dropshadow: $dropshadow; }

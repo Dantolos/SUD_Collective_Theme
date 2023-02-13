@@ -18,14 +18,13 @@
             }
             echo '</div>';
         }
-        ?> 
+        ?>
     </div>
     <div class="footer-row footer-row-right">
         <?php
         if(wp_get_nav_menu_items('Footer Menu') ){
             foreach( wp_get_nav_menu_items('Footer Menu') as $footeritem)
             {
-
                 echo '<a href="'.$footeritem->url.'">';
                     echo '<h4>'.$footeritem->title.'</h4>';
                 echo '</a>';
