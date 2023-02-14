@@ -16,6 +16,7 @@ $dateFormat = new \sud\helper\date\Date_Format;
         
         echo '<div class="event-content">';
         echo '<h2>'.esc_html(get_field('content')['title']).'</h2>';
+        echo '<p><b>'.esc_html(get_field('content')['lead']).'</b></p>';
         echo get_field('content')['description'];
         echo '</div>';
         ?>
@@ -49,7 +50,7 @@ $dateFormat = new \sud\helper\date\Date_Format;
         if(get_field('facts')['venue']){
             echo '<div class="event-fact-row">';
             echo '<h6 style="width:100%;">Venue</h6>';
-            echo '<p>'.$dateFormat->formating_Date_Language(get_field('facts')['date'], 'date').'</p>';
+            echo '<p>'.get_field('facts')['venue'].'</p>';
             echo '</div>';
         }
         if(get_field('facts')['register_link']){
