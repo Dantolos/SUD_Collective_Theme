@@ -17,10 +17,11 @@ $events = $eventObject->posts;
 
 if( !function_exists('event_order_by_date') ){
     function event_order_by_date($a, $b){
-        if( strtotime( str_replace( '/', '-', get_field( 'facts', $a->ID )['date'] ) ) === strtotime( str_replace( '/', '-', get_field( 'facts', $b->ID ) ))  ){
-            return 0;
-        }
-        return strtotime( str_replace( '/', '-', get_field( 'facts', $a->ID )['date'] ) ) > strtotime( str_replace( '/', '-', get_field( 'facts', $b->ID )['date'] ) ) ? -1 : 1;
+        if(!get_field( 'facts', $a->ID )['date'] || !get_field( 'facts', $b->ID )['date']  ){ return 1; }
+        
+        
+
+        return strtotime( str_replace( '/', '-', get_field( 'facts', $a->ID )['date'] ) ) < strtotime( str_replace( '/', '-', get_field( 'facts', $b->ID )['date'] ) ) ? -1 : 1;
     }
 }
 

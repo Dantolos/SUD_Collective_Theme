@@ -144,6 +144,10 @@ h3 {
   font-size: clamp(24px, 2.4rem, 32px);
 }
 
+h1, h2, h3 {
+  font-family: "mediasans-bold";
+}
+
 h4 {
   font-size: clamp(16px, 1.8rem, 20px);
   font-weight: bold;

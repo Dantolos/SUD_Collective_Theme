@@ -9,7 +9,6 @@ $dateFormat = new \sud\helper\date\Date_Format;
 <div class="event-body">
     <div class="event-container">
        <?php
-
         echo '<div class="event-image-header">';
         echo '<img src="'.esc_url(get_field('Thumb')['url']).'" alt="'.esc_attr(get_field('Thumb')['alt']).'">';
         echo '</div>';
