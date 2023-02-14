@@ -12,17 +12,21 @@
     <style>
       @font-face {
         font-family: 'GTAlpina';
-        src: url('<?php echo get_template_directory_uri(); ?>/assets/fonts/GT-Alpina-Condensed-Regular.woff');
-        src: url('<?php echo get_template_directory_uri(); ?>/assets/fonts/GT-Alpina-Condensed-Regular.woff2') format('woff2'),
-             url('<?php echo get_template_directory_uri(); ?>/assets/fonts/GT-Alpina-Condensed-Regular.woff') format('woff');
+        src: url('<?php echo get_template_directory_uri(); ?>/assets/fonts/GT-Alpina-Condensed-Regular.eot');
+        src: url('<?php echo get_template_directory_uri(); ?>/assets/fonts/GT-Alpina-Condensed-Regular.eot') format('embedded-opentype'),
+             url('<?php echo get_template_directory_uri(); ?>/assets/fonts/GT-Alpina-Condensed-Regular.woff2') format('woff2'),
+             url('<?php echo get_template_directory_uri(); ?>/assets/fonts/GT-Alpina-Condensed-Regular.woff') format('woff'),
+             url('<?php echo get_template_directory_uri(); ?>/assets/fonts/GT-Alpina-Condensed-Regular.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
       }
       @font-face {
         font-family: 'GTAlpina';
-        src: url('<?php echo get_template_directory_uri(); ?>/assets/fonts/GT-Alpina-Condensed-Bold.woff');
-        src: url('<?php echo get_template_directory_uri(); ?>/assets/fonts/GT-Alpina-Condensed-Bold.woff2') format('woff2'),
-             url('<?php echo get_template_directory_uri(); ?>/assets/fonts/GT-Alpina-Condensed-Bold.woff') format('woff');
+        src: url('<?php echo get_template_directory_uri(); ?>/assets/fonts/GT-Alpina-Condensed-Bold.eot');
+        src: url('<?php echo get_template_directory_uri(); ?>/assets/fonts/GT-Alpina-Condensed-Bold.eot') format('embedded-opentype'),
+             url('<?php echo get_template_directory_uri(); ?>/assets/fonts/GT-Alpina-Condensed-Bold.woff2') format('woff2'),
+             url('<?php echo get_template_directory_uri(); ?>/assets/fonts/GT-Alpina-Condensed-Bold.woff') format('woff'),
+             url('<?php echo get_template_directory_uri(); ?>/assets/fonts/GT-Alpina-Condensed-Bold.ttf') format('truetype');
         font-weight: bold;
         font-style: bold;
       }

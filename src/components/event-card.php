@@ -7,11 +7,23 @@ class Event_Card{
 
     public function __construct($event){
         $dateFormat = new \sud\helper\date\Date_Format;
+        $pastClass = '';
         
-        $this->html .= '<div class="event-card">';
+        if( strtotime( str_replace( '/', '-', get_field( 'facts', $event )['date'] ) ) < strtotime( str_replace( '/', '-',date( 'd/m/Y' ) ) ) ){
+            $pastClass = 'past-event';
+        }
+        
+        
+        $this->html .= '<div class="event-card '.$pastClass.'">';
             $this->html .= '<div class="eventcard-thumb">';
-                $this->html .= '<img src="'.get_field( 'Thumb', $event )['url'] .'" alt="'.esc_attr( get_field( 'Thumb', $event )['alt'] ).'">';
-                if(get_field( 'facts', $event )['date']){
+                $this->html .= '<div class="eventcard-image">';
+                    if( get_field( 'Thumb', $event ) ){
+                        $this->html .= '<img src="'. get_field( 'Thumb', $event )['url'] .'" alt="'.esc_attr( get_field( 'Thumb', $event )['alt'] ).'" />';
+                    } else {
+                        $this->html .= '<img src="'. get_template_directory_uri() . '/assets/img-placeholder.png' .'" alt="sud-collective-image-placeholder" />';
+                    }
+                $this->html .= '</div>';
+                if( get_field( 'facts', $event )['date'] > 0 ){
                     $this->html .= '<span>'.esc_html( $dateFormat->formating_Date_Language( get_field( 'facts', $event )['date'], 'date' ) ).'</span>';
                 }
             $this->html .= '</div>';

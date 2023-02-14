@@ -358,6 +358,26 @@ a:hover {
   justify-content: center;
 }
 
+.eventcard-thumb {
+  width: 100%;
+  height: 200px;
+}
+.eventcard-thumb .eventcard-image {
+  height: 200px;
+  width: 100%;
+  overflow-y: hidden;
+}
+.eventcard-thumb .eventcard-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.past-event {
+  background-color: #f7edf3 !important;
+}
+
 .default-container {
   width: 100vw;
   display: flex;
