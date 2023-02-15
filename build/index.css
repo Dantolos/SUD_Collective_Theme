@@ -184,6 +184,16 @@ ol li {
   flex-wrap: wrap;
 }
 
+@media (max-width: 1024px) {
+  .d-md-none {
+    display: none;
+  }
+}
+@media (max-width: 667px) {
+  d-sm-none {
+    display: none;
+  }
+}
 .sud-lightbox-container {
   z-index: 150;
   position: fixed;

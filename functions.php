@@ -1,8 +1,10 @@
 <?php
+$theme = wp_get_theme();
+define('THEME_VERSION', $theme->Version); 
 
 function boilerplate_load_assets() {
-  wp_enqueue_script('ourmainjs', get_theme_file_uri('/build/index.js'), array('wp-element'), '1.0', true);
-  wp_enqueue_style('ourmaincss', get_theme_file_uri('/build/index.css', array(), '1.0.04'));
+  wp_enqueue_script('ourmainjs', get_theme_file_uri('/build/index.js'), array('wp-element'), THEME_VERSION, true);
+  wp_enqueue_style('ourmaincss', get_theme_file_uri('/build/index.css', [], THEME_VERSION, 'all'));
 }
 
 add_action('wp_enqueue_scripts', 'boilerplate_load_assets');
@@ -159,7 +161,6 @@ function mytheme_setup_theme_supported_features() {
 add_action( 'after_setup_theme', 'mytheme_setup_theme_supported_features' );
 
 
-
 /*-------------------------------------------------------------*/
 /*----------------------- Dashboard ---------------------------*/
 /*-------------------------------------------------------------*/
@@ -172,7 +173,6 @@ remove_action('welcome_panel', 'wp_welcome_panel');
 function theme_add_scripts() 
 {
     $JsIncList = array(
-      
         array('navi-js', 'navigation.js' ),
         array('anchor-js', 'inc/anchor.js' ),
         array('partner-js', 'inc/partner.js' ),
@@ -181,19 +181,16 @@ function theme_add_scripts()
 
     foreach ($JsIncList as $JsInc) 
     {
-        wp_enqueue_script( $JsInc[0], get_template_directory_uri() . '/src/scripts/' . $JsInc[1], array('jquery'), '1.0.03', true );
+        wp_enqueue_script( $JsInc[0], get_template_directory_uri() . '/src/scripts/' . $JsInc[1], array('jquery'), THEME_VERSION, true );
     }
 
-
     /*------------------------------Send Global Variables---------------------------*/
-
     $wnm_custom = array( 
         'templateUrl' => get_template_directory_uri(), 
         'sitename' => get_bloginfo('name'),
 
         //'info' => $quickInfoAktiv
     );
-    
     
     $scriptToAdGlobal = array('main-js', 'partner-js' );
     foreach( $scriptToAdGlobal as $script ){
@@ -208,9 +205,7 @@ add_action( 'wp_enqueue_scripts', 'theme_add_scripts' );
 add_action( 'wp_enqueue_scripts', 'dashicons_front_end' );
 
 function dashicons_front_end() {
-
    wp_enqueue_style( 'dashicons' );
-
 }
 
 
@@ -229,7 +224,4 @@ function adminfavicon() {
 }
 add_action( 'admin_head', 'adminfavicon' );
 
-
-
-//load fonts 
 

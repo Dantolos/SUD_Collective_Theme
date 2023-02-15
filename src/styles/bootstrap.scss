@@ -7,4 +7,15 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+@include breakpoint( 'm' ){
+    .d-md-none {
+        display: none;
+    }
+    
+}
 
+@include breakpoint( 's' ){
+    d-sm-none {
+        display: none;
+    }
+}
