@@ -13,7 +13,7 @@ class Date_Format {
 
                
                $value = strtotime( str_replace( '/', '-',  $value) );
-               $lang = (apply_filters( 'wpml_current_language', NULL ) ) ? apply_filters( 'wpml_current_language', NULL )  : 'de';
+               $lang = (apply_filters( 'wpml_current_language', NULL ) ) ? apply_filters( 'wpml_current_language', NULL )  : 'en';
              
                if( date( 'H:i', $value )  === '00:00' ){
                     return $time;
@@ -42,7 +42,7 @@ class Date_Format {
                $date = '';
                $value = strtotime( str_replace( '/', '-',  $value) );
                
-               $lang = (apply_filters( 'wpml_current_language', NULL ) ) ? apply_filters( 'wpml_current_language', NULL )  : 'de';
+               $lang = (apply_filters( 'wpml_current_language', NULL ) ) ? apply_filters( 'wpml_current_language', NULL )  : 'en';
 
                switch ( $lang ) {
 

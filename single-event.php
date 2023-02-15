@@ -9,8 +9,13 @@ $dateFormat = new \sud\helper\date\Date_Format;
 <div class="event-body">
     <div class="event-container">
        <?php
+            
         echo '<div class="event-image-header">';
-        echo '<img src="'.esc_url(get_field('Thumb')['url']).'" alt="'.esc_attr(get_field('Thumb')['alt']).'">';
+        if( get_field('Thumb') ){
+            echo '<img src="'.esc_url(get_field('Thumb')['url']).'" alt="'.esc_attr(get_field('Thumb')['alt']).'">';
+        } else {
+            echo '<img src="'. get_template_directory_uri() . '/assets/img-placeholder.png' .'" alt="sud-event-placeholder-image">';
+        }
         echo '</div>';
         
         echo '<div class="event-content">';
@@ -53,11 +58,9 @@ $dateFormat = new \sud\helper\date\Date_Format;
             echo '</div>';
         }
         if(get_field('facts')['register_link']){
-            echo '<div style="max-height:80vh;overflow-y:scroll;position:fixed;background:#232323bb;color:white;padding:10;max-width:80vw;top:100px;right:50px;z-index:10000000;border:3px solid #7c00fa;"><pre>';
-            var_dump(get_field('register_link')  );
-            echo '</pre></div>';
+           
              
-            echo '<a href="'.get_field('register_link').'" target="_blank"><button>Register now</button></a>';
+            echo '<a href="'.get_field('facts')['register_link'].'" target="_blank"><button>Register now</button></a>';
         }
 
         ?>
