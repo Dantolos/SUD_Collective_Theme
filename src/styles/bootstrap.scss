@@ -8,14 +8,14 @@
     flex-wrap: wrap;
 }
 @include breakpoint( 'm' ){
-    .d-md-none {
+    .d-sm-none {
         display: none;
     }
     
 }
 
 @include breakpoint( 's' ){
-    d-sm-none {
+    .d-xs-none {
         display: none;
     }
 }

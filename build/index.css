@@ -185,12 +185,12 @@ ol li {
 }
 
 @media (max-width: 1024px) {
-  .d-md-none {
+  .d-sm-none {
     display: none;
   }
 }
 @media (max-width: 667px) {
-  d-sm-none {
+  .d-xs-none {
     display: none;
   }
 }
