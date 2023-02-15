@@ -133,14 +133,17 @@ button:hover {
 h1 {
   color: #3C1438;
   font-size: clamp(46px, 5rem, 64px);
+  margin-bottom: 0.6rem;
 }
 
 h2 {
   font-size: clamp(32px, 3rem, 46px);
+  margin-bottom: 0.6rem;
 }
 
 h3 {
   font-size: clamp(24px, 2.4rem, 32px);
+  margin-bottom: 0.6rem;
 }
 
 h1, h2, h3 {
