@@ -1,7 +1,7 @@
 
 :root{
     font-size: 1vw;
-    color:#3C1438;
+    color:#3C1438 ;
 }
 
 
@@ -12,7 +12,7 @@ h1 {
 
 
 h2 {
-    color:#3C1438;
+ 
     font-size: clamp( 32px, 3rem, 46px);
 }
 
@@ -20,21 +20,27 @@ h3 {
     font-size: clamp( 24px, 2.4rem, 32px);
 }
 
-h1, h2, h3 { font-family: 'mediasans-bold'; }
+h1, h2, h3 { font-family: 'mediasans-bold';color:#3C1438; }
 
 h4 {
-    font-size: clamp( 16px, 1.8rem, 20px);
+    color:#3C1438;
+    font-size: clamp( 18px, 1.8rem, 22px);
+    line-height: clamp( 28px, 1.8rem, 34px);
     font-weight: bold;
 }
 
 h5 {
-    font-size: clamp( 14px, 1.5rem, 16px);
+    color:#3C1438;
+    font-size: clamp( 16px, 1.5rem, 18px);
+    line-height: clamp( 26px, 1.8rem, 32px);
     font-weight: bold;
 }
 
 div, p, a {
-    font-size: clamp( 14px, 1.5rem, 16px) !important;
-    line-height: clamp( 26px, 1.8rem, 38px);
+
+    color:#3C1438;
+    font-size: clamp( 16px, 1.5rem, 18px) !important;
+    line-height: clamp( 26px, 1.8rem, 32px);
     margin-bottom: 20px;
 }
 

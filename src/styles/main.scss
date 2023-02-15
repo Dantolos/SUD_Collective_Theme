@@ -14,8 +14,9 @@ html, body {
 }
 
 body {
- 
+  color: $darkColor;
   font-size: .9rem;
+
   @include atSmall {
     padding: 0px;
     font-size: 1.1rem;
@@ -36,8 +37,9 @@ a:hover {
   color: $secondaryColor;
 }
 
+#main-container {
 
-
+}
 
 
 @import 'templates/events.scss';

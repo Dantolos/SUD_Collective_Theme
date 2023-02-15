@@ -53,7 +53,11 @@ $dateFormat = new \sud\helper\date\Date_Format;
             echo '</div>';
         }
         if(get_field('facts')['register_link']){
-            echo '<a href="'.esc_url(get_field('register_link')).'" target="_blank"><button>Register now</button></a>';
+            echo '<div style="max-height:80vh;overflow-y:scroll;position:fixed;background:#232323bb;color:white;padding:10;max-width:80vw;top:100px;right:50px;z-index:10000000;border:3px solid #7c00fa;"><pre>';
+            var_dump(get_field('register_link')  );
+            echo '</pre></div>';
+             
+            echo '<a href="'.get_field('register_link').'" target="_blank"><button>Register now</button></a>';
         }
 
         ?>

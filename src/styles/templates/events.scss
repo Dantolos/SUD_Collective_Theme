@@ -29,7 +29,9 @@
         .event-content {
             padding: 5vh 5vw;
 
-            h2 { margin: 20px 0; }
+            h2 { margin: 20px 0; 
+                color: $primaryColor;
+            }
         }
 
         @include breakpoint( 'm' ){

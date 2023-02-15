@@ -8,3 +8,4 @@ ANCHOR.goTO();
 
 
 
+console.log('d')

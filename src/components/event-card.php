@@ -29,7 +29,7 @@ class Event_Card{
                 }
             $this->html .= '</div>';
 
-            $this->html .= '<h4>'. esc_html( get_field( 'content', $event )['title'] ).'</h4>';      
+            $this->html .= '<h3>'. esc_html( get_field( 'content', $event )['title'] ).'</h3>';      
             $this->html .= '<p>'. esc_html( get_field( 'content', $event )['lead'] ).'</p>';
             $this->html .= '<a href="'.esc_url( get_permalink( $event ) ).'"><button>Attend</button></a>';
 

@@ -12,6 +12,11 @@
     margin: 3%;
 }
 
+.insight-card > h3 {
+    color:#942F6D;
+    margin-bottom: 10px;
+}
+
 .insight-card > img {
     max-width: 50%;
     margin:10% 25%;

@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <?php wp_head();
-    echo '<div style="max-height:80vh;overflow-y:scroll;position:fixed;background:#232323bb;color:white;padding:10;max-width:80vw;top:100px;right:50px;z-index:10000000;border:3px solid #7c00fa;"><pre>';
-    var_dump(  get_template_directory_uri() . '/assets/fonts/GT-Alpina-Condensed-Regular' );
-    echo '</pre></div>';
      
     ?>
     <style>
@@ -52,3 +49,5 @@
       $navigationBar = new \sud\components\navigation\Navigationbar;
       echo $navigationBar->html;
     ?>  
+
+    <div id="main-container">
