@@ -9,7 +9,7 @@ $darkColor: #3C1438;
 }
 
 .has-secondary-color-color {
-    color:$secondaryColor;
+    color:$secondaryColor; 
 }
 
 .has-third-color-color {
@@ -97,4 +97,12 @@ button {
 
   // Standard version (Firefox only for now)
   scrollbar-color: $foreground-color $background-color;
+}
+
+.hyphens {
+    -moz-hyphens: auto;
+   -o-hyphens: auto;
+   -webkit-hyphens: auto;
+   -ms-hyphens: auto;
+   hyphens: auto; 
 }

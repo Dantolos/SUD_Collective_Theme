@@ -15,11 +15,13 @@ class Navigationbar {
             //desktop menu
             $this->html .= '<nav id="navigation-menu">';
                 //menu items
-                foreach( wp_get_nav_menu_items('Header Menu') as $menuitem)
-                {
-                    $this->html .= '<a href="'.$menuitem->url.'">';
-                    $this->html .= $menuitem->title;
-                    $this->html .= '</a>';
+                if(wp_get_nav_menu_items('Header Menu')){
+                    foreach( wp_get_nav_menu_items('Header Menu') as $menuitem)
+                    {
+                        $this->html .= '<a href="'.$menuitem->url.'">';
+                        $this->html .= $menuitem->title;
+                        $this->html .= '</a>';
+                    }
                 }
             $this->html .= '</nav>';
 

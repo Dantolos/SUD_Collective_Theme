@@ -13,7 +13,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'aria-label' => '',
                 'type' => 'text',
                 'instructions' => '',
-                'required' => 0,
+                'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(
                     'width' => '',
@@ -33,7 +33,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'aria-label' => '',
                 'type' => 'textarea',
                 'instructions' => '',
-                'required' => 0,
+                'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(
                     'width' => '',
@@ -53,7 +53,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'aria-label' => '',
                 'type' => 'image',
                 'instructions' => '',
-                'required' => 0,
+                'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(
                     'width' => '30',

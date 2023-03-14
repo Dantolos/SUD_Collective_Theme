@@ -1,0 +1,46 @@
+.acf-form-success-message {
+    background-color:green;
+    border-radius: 50px;
+    margin-top:20px;
+    padding: 15px 150px;    
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p {color:white !important; margin-bottom:0;}
+}
+
+.SUD-ACF-Form {
+    $lightpink:rgba(148, 47, 109,0.06) ;
+
+    width:100%;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    .acf-form {
+        max-width:1200px;
+        margin: 50px 0;
+
+        .-border { border:none !important; }
+
+         a  {
+            display:block;
+        }
+
+        .acf-input-wrap>input,
+        .acf-input>textarea
+        {
+            border: 0px solid white;
+            background-color: $lightpink;
+            padding: 15px 15px;
+        }
+
+        .acf-button {
+            background-color:$primaryColor;
+            color:white;
+            padding: 5px 20px ;
+            border-radius:50px;
+            border-width:0;
+        }
+    }
+}

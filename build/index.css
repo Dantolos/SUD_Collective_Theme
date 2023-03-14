@@ -125,6 +125,12 @@ button:hover {
   display: none;
 }
 
+.hyphens {
+  -o-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
 :root {
   font-size: 1vw;
   color: #3C1438;
@@ -263,6 +269,51 @@ ol li {
 }
 .partner-lightbox h2 {
   margin-bottom: 20px;
+}
+
+.acf-form-success-message {
+  background-color: green;
+  border-radius: 50px;
+  margin-top: 20px;
+  padding: 15px 150px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.acf-form-success-message p {
+  color: white !important;
+  margin-bottom: 0;
+}
+
+.SUD-ACF-Form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.SUD-ACF-Form .acf-form {
+  max-width: 1200px;
+  margin: 50px 0;
+}
+.SUD-ACF-Form .acf-form .-border {
+  border: none !important;
+}
+.SUD-ACF-Form .acf-form a {
+  display: block;
+}
+.SUD-ACF-Form .acf-form .acf-input-wrap > input,
+.SUD-ACF-Form .acf-form .acf-input > textarea {
+  border: 0px solid white;
+  background-color: rgba(148, 47, 109, 0.06);
+  padding: 15px 15px;
+}
+.SUD-ACF-Form .acf-form .acf-button {
+  background-color: #942F6D;
+  color: white;
+  padding: 5px 20px;
+  border-radius: 50px;
+  border-width: 0;
 }
 
 html, body {
