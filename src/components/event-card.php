@@ -9,8 +9,10 @@ class Event_Card{
         $dateFormat = new \sud\helper\date\Date_Format;
         $pastClass = '';
         
+        // filter passed events
         if( strtotime( str_replace( '/', '-', get_field( 'facts', $event )['date'] ) ) < strtotime( str_replace( '/', '-',date( 'd/m/Y' ) ) ) ){
-            $pastClass = 'past-event';
+            // if just wanna change background on passed events $pastClass = 'past-event';
+            return '';
         }
         
         
@@ -36,11 +38,9 @@ class Event_Card{
             
         $this->html .= '</div>';
 
-        if( strtotime( str_replace( '/', '-', get_field( 'facts', $event )['date'] ) ) < strtotime( str_replace( '/', '-',date( 'd/m/Y' ) ) ) ){
-            return '';
-        } else {
-            return $this->html;
-        }
+      
+        return $this->html;
+        
         
     }
 }

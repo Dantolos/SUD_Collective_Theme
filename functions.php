@@ -225,3 +225,51 @@ function adminfavicon() {
 add_action( 'admin_head', 'adminfavicon' );
 
 
+
+
+
+// Auto fill Title and Slug for CPT's - 'companies', 'contacts', 'properties'
+function lh_acf_save_post( $post_id ) {
+
+  // Don't do this on the ACF post type
+  if ( get_post_type( $post_id ) == 'acf' ) {
+      return;
+  }
+
+  $new_title = '';
+  $new_slug = '';
+
+  // Get title from 'companies' CPT acf field 'company_name'
+  if ( get_post_type( $post_id ) == 'event' ) {
+      $new_title = get_field( 'content', $post_id )['title'];
+      $new_slug = sanitize_title( $new_title );
+  }
+
+
+
+  // Get title from 'properties' CPT acf field 'building_name'
+  if ( get_post_type( $post_id ) == 'partner') {
+      $new_title = get_field( 'company', $post_id );
+      $new_slug = sanitize_title( $new_title );
+  }
+
+  // Prevent iInfinite looping...
+  remove_action( 'acf/save_post', 'lh_acf_save_post' );
+
+  // Grab post data
+  $post = array(
+      'ID'            => $post_id,
+      'post_title'    => $new_title,
+      'post_name'     => $new_slug,
+  );
+
+  // Update the Post
+  wp_update_post( $post );
+
+  // Continue save action
+  add_action( 'acf/save_post', 'lh_save_post' );
+
+  // Set the return URL in case of 'new' post
+  $_POST['return'] = add_query_arg( 'updated', 'true', get_permalink( $post_id ) );
+}
+add_action( 'acf/save_post', 'lh_acf_save_post', 10, 1 );

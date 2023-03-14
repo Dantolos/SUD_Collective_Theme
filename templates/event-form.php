@@ -21,6 +21,7 @@ get_header();
 					'post_type' => 'event',
 					'post_status' => 'draft'
 				),
+                'post_title' => false,
 				//'fields' => array( 'field_63da910570a25' ),
 				'return' => '%post_url%&action=create&updated=true',
 				'honeypot' => false,
