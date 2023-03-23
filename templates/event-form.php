@@ -12,7 +12,7 @@ get_header();
 
 <main>
 	<article class="SUD-ACF-Form">
-		<h1>Add yout Event</h1>
+		<h1>Add your Event</h1>
         <?php
 		acf_form(
 			array(
