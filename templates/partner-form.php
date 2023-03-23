@@ -29,7 +29,7 @@ get_header();
 				//'fields' => array( 'field_63da910570a25' ),
 				'return' => '?success',
 				'honeypot' => false,
-				'submit_value' => 'Send Event',
+				'submit_value' => 'Join the collective',
 			)
 		);
 		?>
