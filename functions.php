@@ -271,5 +271,15 @@ function lh_acf_save_post( $post_id ) {
 
   // Set the return URL in case of 'new' post
   $_POST['return'] = add_query_arg( 'updated', 'true', get_permalink( $post_id ) );
+
+  // email data
+  $to = 'agi@livelearninglabs.ch';
+  $headers = array('Content-Type: text/html; charset=UTF-8');//make it HTML
+  $subject = 'A new submission from the Antiracist site!';
+  //$link = get_edit_post_link( $post_id );
+  $body = "<p>You can edit and approve it at the following link. </p> <h2>Partial Preview</h2>";
+   
+  // send email
+  wp_mail($to, $subject, $body, $headers );
 }
 add_action( 'acf/save_post', 'lh_acf_save_post', 10, 1 );

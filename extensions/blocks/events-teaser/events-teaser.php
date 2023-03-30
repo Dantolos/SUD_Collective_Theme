@@ -18,7 +18,41 @@ if ( ! empty( $block['align'] ) ) {
 
 
 // Load values and assign defaults.
-$events = get_field( 'events' ) ?: 'Choose comming up events ';
+$selection = get_field( 'selection' );
+
+$events = array();
+
+    
+if($selection === 'manual') {
+   
+    $events = get_field( 'events' ) ?: 'Choose comming up events ';
+}
+if($selection === 'next') {
+    $args = array(
+        'post_status' => 'publish',
+        'post_type' => 'event'
+    );
+    $eventObject = new WP_Query($args);
+    $allEvents = $eventObject->posts;
+    if( !function_exists('event_order_by_date') ){
+        function event_order_by_date($a, $b){
+            if(!get_field( 'facts', $a->ID )['date'] || !get_field( 'facts', $b->ID )['date']  ){ return 1; }
+    
+            return strtotime( str_replace( '/', '-', get_field( 'facts', $a->ID )['date'] ) ) < strtotime( str_replace( '/', '-', get_field( 'facts', $b->ID )['date'] ) ) ? -1 : 1;
+        }
+    }
+    
+    uasort( $allEvents, 'event_order_by_date' );
+
+
+    foreach( $allEvents as $singleEvent){
+        if( strtotime( str_replace( '/', '-', get_field( 'facts', $singleEvent->ID )['date'] ) ) > strtotime( str_replace( '/', '-',date( 'd/m/Y' ) ) ) ){
+            if( count($events) < 3 ){
+                array_push( $events, $singleEvent->ID  );
+            }
+        }
+    }
+}
 
 ?>
 
