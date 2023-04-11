@@ -243,14 +243,14 @@ function lh_acf_save_post( $post_id ) {
   if ( get_post_type( $post_id ) == 'event' ) {
       $new_title = get_field( 'content', $post_id )['title'];
       $new_slug = sanitize_title( $new_title );
+      $type = "Event";
   }
-
-
 
   // Get title from 'properties' CPT acf field 'building_name'
   if ( get_post_type( $post_id ) == 'partner') {
       $new_title = get_field( 'company', $post_id );
       $new_slug = sanitize_title( $new_title );
+      $type = "Partner";
   }
 
   // Prevent iInfinite looping...
@@ -275,9 +275,11 @@ function lh_acf_save_post( $post_id ) {
   // email data
   $to = 'agi@livelearninglabs.ch';
   $headers = array('Content-Type: text/html; charset=UTF-8');//make it HTML
-  $subject = 'A new submission from the Antiracist site!';
-  //$link = get_edit_post_link( $post_id );
-  $body = "<p>You can edit and approve it at the following link. </p> <h2>Partial Preview</h2>";
+  $subject = 'SUD Collective | New '.$type.': ' $new_title;
+  $link = get_edit_post_link( $post_id );
+  $body = '<p>Ein neuer '.$type.'-Post wurde eingereicht.</p>';
+  $body .= '<p>Bitte überprüfen und publizieren:</p>';
+  $body .= '<a href="'.link.'"><div style="padding: 10px 20px; background-color:#444444; color:white;">Direct to post</div></a>';
    
   // send email
   wp_mail($to, $subject, $body, $headers );
