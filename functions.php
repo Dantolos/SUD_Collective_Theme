@@ -277,10 +277,10 @@ function lh_acf_save_post( $post_id ) {
   $headers = array('Content-Type: text/html; charset=UTF-8', 'Cc: agi@livelearninglabs.ch');//make it HTML
   $subject = 'SUD Collective | New '.$type.': '.$new_title;
   $link = get_edit_post_link( $post_id );
-  $body = '<div style="padding: 50px 40px; border-radius:30px;width: 500px; display:flex; justify-content:center; align-items:center; background-color:#F4F4F4; color:#3C1438;">';
-  $body .= '<h3><b>Ein neuer '.$type.'-Post wurde eingereicht.</b></h3>';
-  $body .= '<p>Bitte überprüfen und publizieren:</p>';
-  $body .= '<a href="'.$link.'"><div style="padding: 10px 20px; background-color:#942F6D; color:white;">Direkt zum neuen Beitrag -></div></a>';
+  $body = '<div style="padding: 50px 40px; border-radius:30px;width: 500px; display:flex; flex-direction: column; justify-content:center; align-items:center; background-color:#F4F4F4; color:#3C1438;">';
+  $body .= '<h3 style="text-align:center;"><b>Ein neuer '.$type.'-Post wurde eingereicht.</b></h3>';
+  $body .= '<p  style="text-align:center;">Bitte überprüfen und publizieren:</p>';
+  $body .= '<a href="'.$link.'"><div style="padding: 10px 20px; background-color:#942F6D; color:white; text-align:center;">Direkt zum neuen Beitrag -></div></a>';
   $body .= '</div>'; 
   
   // send email
