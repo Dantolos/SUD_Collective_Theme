@@ -275,7 +275,7 @@ function lh_acf_save_post( $post_id ) {
   // email data
   $to = 'agi@livelearninglabs.ch';
   $headers = array('Content-Type: text/html; charset=UTF-8');//make it HTML
-  $subject = 'SUD Collective | New '.$type.': ' $new_title;
+  $subject = 'SUD Collective | New '.$type.': '.$new_title;
   $link = get_edit_post_link( $post_id );
   $body = '<p>Ein neuer '.$type.'-Post wurde eingereicht.</p>';
   $body .= '<p>Bitte überprüfen und publizieren:</p>';
