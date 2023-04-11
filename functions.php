@@ -279,7 +279,7 @@ function lh_acf_save_post( $post_id ) {
   $link = get_edit_post_link( $post_id );
   $body = '<p>Ein neuer '.$type.'-Post wurde eingereicht.</p>';
   $body .= '<p>Bitte überprüfen und publizieren:</p>';
-  $body .= '<a href="'.link.'"><div style="padding: 10px 20px; background-color:#444444; color:white;">Direct to post</div></a>';
+  $body .= '<a href="'.$link.'"><div style="padding: 10px 20px; background-color:#444444; color:white;">Direct to post</div></a>';
    
   // send email
   wp_mail($to, $subject, $body, $headers );
