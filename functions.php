@@ -273,14 +273,16 @@ function lh_acf_save_post( $post_id ) {
   $_POST['return'] = add_query_arg( 'updated', 'true', get_permalink( $post_id ) );
 
   // email data
-  $to = 'agi@livelearninglabs.ch';
-  $headers = array('Content-Type: text/html; charset=UTF-8');//make it HTML
+  $to = 'mko@startupdays.ch';
+  $headers = array('Content-Type: text/html; charset=UTF-8', 'Cc: agi@livelearninglabs.ch');//make it HTML
   $subject = 'SUD Collective | New '.$type.': '.$new_title;
   $link = get_edit_post_link( $post_id );
-  $body = '<p>Ein neuer '.$type.'-Post wurde eingereicht.</p>';
+  $body = '<div style="padding: 50px 40px; border-radius:30px;width: 500px; display:flex; justify-content:center; align-items:center; background-color:#F4F4F4; color:#3C1438;">';
+  $body .= '<h3><b>Ein neuer '.$type.'-Post wurde eingereicht.</b></h3>';
   $body .= '<p>Bitte überprüfen und publizieren:</p>';
-  $body .= '<a href="'.$link.'"><div style="padding: 10px 20px; background-color:#444444; color:white;">Direct to post</div></a>';
-   
+  $body .= '<a href="'.$link.'"><div style="padding: 10px 20px; background-color:#942F6D; color:white;">Direkt zum neuen Beitrag -></div></a>';
+  $body = '</div>'; 
+  
   // send email
   wp_mail($to, $subject, $body, $headers );
 }
