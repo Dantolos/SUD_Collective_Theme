@@ -15,7 +15,6 @@ class Event_Card{
             return '';
         }
         
-        
         $this->html .= '<div class="event-card '.$pastClass.'">';
             $this->html .= '<div class="eventcard-thumb">';
                 $this->html .= '<div class="eventcard-image">'; 
@@ -35,12 +34,9 @@ class Event_Card{
             $this->html .= '<p>'. esc_html( get_field( 'content', $event )['lead'] ).'</p>';
             $this->html .= '<a href="'.esc_url( get_permalink( $event ) ).'"><button>'.__('More', 'SUD').'</button></a>';
 
-            
         $this->html .= '</div>';
 
-      
         return $this->html;
-        
-        
+         
     }
 }

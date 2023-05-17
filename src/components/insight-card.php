@@ -17,10 +17,7 @@ class Insight_Card {
         $this->html .=  '<a href="'.esc_url($insightLink).'" target="'.$linkAttr['target'].'"><button class="'.$linkAttr['class'].'">more</button></a>';
         $this->html .=  '</div>';
     
-    
         return $this->html;
-
-
     }
 
 }

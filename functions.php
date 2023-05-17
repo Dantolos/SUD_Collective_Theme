@@ -153,8 +153,6 @@ function mytheme_setup_theme_supported_features() {
       'slug' => 'dark-color',
       'color' => '#3C1438',
     ),
-      
-      
   ) );
 }
 
@@ -188,18 +186,14 @@ function theme_add_scripts()
     $wnm_custom = array( 
         'templateUrl' => get_template_directory_uri(), 
         'sitename' => get_bloginfo('name'),
-
-        //'info' => $quickInfoAktiv
     );
     
     $scriptToAdGlobal = array('main-js', 'partner-js' );
     foreach( $scriptToAdGlobal as $script ){
         wp_localize_script( $script, 'globalURL', $wnm_custom );
     }
-
 }
 add_action( 'wp_enqueue_scripts', 'theme_add_scripts' );
-
 
 //add dashicons to frontend
 add_action( 'wp_enqueue_scripts', 'dashicons_front_end' );
@@ -208,15 +202,11 @@ function dashicons_front_end() {
    wp_enqueue_style( 'dashicons' );
 }
 
-
 //Register block script
 add_action( 'init', 'sud_register_block_script' );
 function sud_register_block_script() {
   wp_register_script( 'block-partner-grid', get_template_directory_uri() . '/extensions/blocks/partner-grid/partner-grid.js', [ 'jquery', 'acf' ] );
 }
-
-
-// Change template directory
 
 
 function adminfavicon() {
@@ -227,8 +217,10 @@ add_action( 'admin_head', 'adminfavicon' );
 
 
 
+/*-------------------------------------------------------------*/
+/*-----------------POST SUBMIT FORM HANDLER--------------------*/
+/*-------------------------------------------------------------*/
 
-// Auto fill Title and Slug for CPT's - 'companies', 'contacts', 'properties'
 function lh_acf_save_post( $post_id ) {
 
   // Don't do this on the ACF post type
@@ -239,19 +231,25 @@ function lh_acf_save_post( $post_id ) {
   $new_title = '';
   $new_slug = '';
 
-  // Get title from 'companies' CPT acf field 'company_name'
+  // Get title from 'event' CPT acf field 'content[title]'
   if ( get_post_type( $post_id ) == 'event' ) {
       $new_title = get_field( 'content', $post_id )['title'];
       $new_slug = sanitize_title( $new_title );
       $type = "Event";
   }
 
-  // Get title from 'properties' CPT acf field 'building_name'
+  // Get title from 'partner' CPT acf field 'company'
   if ( get_post_type( $post_id ) == 'partner') {
       $new_title = get_field( 'company', $post_id );
       $new_slug = sanitize_title( $new_title );
       $type = "Partner";
   }
+
+  if ( get_post_type( $post_id ) == 'contact') {
+    $new_title = get_field( 'first_name', $post_id ) . ' ' . get_field( 'last_name', $post_id );
+    $new_slug = sanitize_title( $new_title );
+    $type = "Contact";
+}
 
   // Prevent iInfinite looping...
   remove_action( 'acf/save_post', 'lh_acf_save_post' );
@@ -272,18 +270,73 @@ function lh_acf_save_post( $post_id ) {
   // Set the return URL in case of 'new' post
   $_POST['return'] = add_query_arg( 'updated', 'true', get_permalink( $post_id ) );
 
-  // email data
-  $to = 'mko@startupdays.ch';
-  $headers = array('Content-Type: text/html; charset=UTF-8', 'Cc: agi@livelearninglabs.ch');//make it HTML
-  $subject = 'SUD Collective | New '.$type.': '.$new_title;
-  $link = get_edit_post_link( $post_id );
-  $body = '<div style="padding: 50px 40px; border-radius:30px;width: 500px; display:flex; flex-direction: column; justify-content:center; align-items:center; background-color:#F4F4F4; color:#3C1438;">';
-  $body .= '<h3 style="text-align:center;"><b>Ein neuer '.$type.'-Post wurde eingereicht.</b></h3>';
-  $body .= '<p  style="text-align:center;">Bitte überprüfen und publizieren:</p>';
-  $body .= '<a href="'.$link.'"><div style="padding: 10px 20px; background-color:#942F6D; color:white; text-align:center;">Direkt zum neuen Beitrag -></div></a>';
-  $body .= '</div>'; 
-  
-  // send email
-  wp_mail($to, $subject, $body, $headers );
+  if( get_post_type( $post_id ) == 'partner' || get_post_type( $post_id ) == 'event' ) {
+    // email data
+    $to = 'mko@startupdays.ch';
+    $headers = array('Content-Type: text/html; charset=UTF-8', 'Cc: agi@livelearninglabs.ch');//make it HTML
+    $subject = 'SUD Collective | New '.$type.': '.$new_title;
+    $link = get_edit_post_link( $post_id );
+    
+    $body = '<div style="padding: 50px 40px; border-radius:30px;width: 500px; display:flex; flex-direction: column; justify-content:center; align-items:center; background-color:#F4F4F4; color:#3C1438;">';
+    $body .= '<h3 style="text-align:center;"><b>Ein neuer '.$type.'-Post wurde eingereicht.</b></h3>';
+    $body .= '<p  style="text-align:center;">Bitte überprüfen und publizieren:</p>';
+    $body .= '<a href="'.$link.'"><div style="padding: 10px 20px; background-color:#942F6D; color:white; text-align:center;">Direkt zum neuen Beitrag -></div></a>';
+    $body .= '</div>';
+    
+    // send email
+    wp_mail($to, $subject, $body, $headers );
+  }
 }
 add_action( 'acf/save_post', 'lh_acf_save_post', 10, 1 );
+
+
+/*-------------------------------------------------------------*/
+/*---------------------DISABLE COMMENTS------------------------*/
+/*-------------------------------------------------------------*/
+add_action('admin_init', function () {
+  // Redirect any user trying to access comments page
+  global $pagenow;
+   
+  if ($pagenow === 'edit-comments.php') {
+      wp_safe_redirect(admin_url());
+      exit;
+  }
+
+  // Remove comments metabox from dashboard
+  remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
+
+  // Disable support for comments and trackbacks in post types
+  foreach (get_post_types() as $post_type) {
+      if (post_type_supports($post_type, 'comments')) {
+          remove_post_type_support($post_type, 'comments');
+          remove_post_type_support($post_type, 'trackbacks');
+      }
+  }
+});
+
+// Close comments on the front-end
+add_filter('comments_open', '__return_false', 20, 2);
+add_filter('pings_open', '__return_false', 20, 2);
+
+// Hide existing comments
+add_filter('comments_array', '__return_empty_array', 10, 2);
+
+// Remove comments page in menu
+add_action('admin_menu', function () {
+  remove_menu_page('edit-comments.php');
+});
+
+// Remove comments links from admin bar
+add_action('init', function () {
+  if (is_admin_bar_showing()) {
+        remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
+  }
+});
+
+
+/*-------------------------------------------------------------*/
+/*-------------------CUSTOM API ENDPOINT-----------------------*/
+/*-------------------------------------------------------------*/
+
+//require_once(dirname(__FILE__).'/extensions/api/post.api.php');
+

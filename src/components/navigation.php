@@ -5,7 +5,6 @@ namespace sud\components\navigation;
 class Navigationbar {
     public $html = '';
     
-
     public function __construct(){
 
         $this->html .= '<div id="navigation-container" class="nav-big" >';

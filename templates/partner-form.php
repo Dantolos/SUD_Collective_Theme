@@ -7,7 +7,7 @@
 acf_form_head();
 get_header();
 
-?>
+?>	
 
 
 <main>
@@ -15,6 +15,13 @@ get_header();
 		<h1>Be a part of the Collective</h1>
         <?php
 		//successmessage
+		$args = array(
+			'post_type' => 'contacts',
+
+		);
+		$contacts = new WP_Query($args);
+		echo '<h1>'count($contacts)'</h1>';
+
 		if(isset($_GET["success"])){
 			echo '<div class="acf-form-success-message"><p>Your form is sent sucessfull!</p></div>';
 		}

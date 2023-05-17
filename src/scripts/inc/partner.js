@@ -1,14 +1,6 @@
 
 const PARTNERS = document.querySelectorAll('.partner-card');
 
-//fetch('http://localhost:3000/wp-json/wp/v2/partner/82')
- // .then(response => response.json())
-  //.then(data => console.log(JSON.stringify(data)))
-
-
-
-  
-
 for(let PARTNER of PARTNERS) {
   PARTNER.addEventListener('click', () => {
 
@@ -52,7 +44,6 @@ async function createLightbox(data){
     BODY.appendChild(LIGHTBOXCONTAINER);
 
     setTimeout( closeTriggerLightbox() ,300);
-    
 }
 
 async function fillLighbox(container, data){
@@ -76,7 +67,6 @@ function closeLightbox(){
     LIGHTBOXCONTAINER.remove();
     
 }
-
 
 async function PartnerContent(data){
     let html = '';

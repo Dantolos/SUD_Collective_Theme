@@ -38,12 +38,9 @@
             src: url('<?php echo get_template_directory_uri(); ?>/assets/fonts/mediasansweb-bold.eot?#iefix') format('embedded-opentype'),
                   url('<?php echo get_template_directory_uri(); ?>/assets/fonts/mediasansweb-bold.woff') format('woff');
       }
-
     </style>
   </head>
   <body <?php body_class(); ?>>
- 
-
     <?php
       //add navigationbar
       $navigationBar = new \sud\components\navigation\Navigationbar;

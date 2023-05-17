@@ -21,6 +21,7 @@ if ( ! empty( $block['align'] ) ) {
 $partners = get_field( 'partner' ) ?: 'Choose partners ';
 $minWidth = get_field( 'width' ) ?: '200';
 $columns = get_field( 'colums' ) ?: 3;
+$category = get_field('partner_category') ?: false;
 
 $columnWidht = 100 / $columns - ( $columns * 2 ); 
 
@@ -37,9 +38,6 @@ if( get_field('order') ){
     }
     uasort($partners, 'partner_order_by');
 }
-
-
-
 ?>
 
 
@@ -47,6 +45,28 @@ if( get_field('order') ){
     <?php
     if( is_array($partners)) {
         foreach($partners as $partner){
+            $filtered = true;
+
+            //PARTNER FILTER ACF 
+            $partnerCats = wp_get_post_terms($partner, 'partner_category');
+            if($category){
+                //if category is selected, check if term exists in partner post
+                if (!empty($partnerCats)) {
+                    foreach($partnerCats as $partnerCat){
+                        if( $partnerCat->term_id === $category){
+                            $filtered = false;
+                        }
+                    }
+                } 
+            }else {
+                //if no category is selected, take all the partners without a categorie related
+                if (empty($partnerCats)) {
+                    $filtered = false;
+                }
+            }
+
+            if($filtered){continue;}
+
             echo '<div class="partner-card" data-partner="'.$partner.'" style="min-width:'.$minWidth.'px; width:'.$columnWidht.'%; background-color:'. get_field('background_color').';" >';
                 echo '<img src="'.esc_url(get_field('logo', $partner)['url']).'" alt="'.esc_attr(get_field('company', $partner)).'" />';
             echo '</div>';

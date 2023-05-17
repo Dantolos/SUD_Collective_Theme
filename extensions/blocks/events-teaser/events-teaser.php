@@ -1,6 +1,4 @@
 <?php
-
-
 // Support custom "anchor" values.
 $anchor = '';
 if ( ! empty( $block['anchor'] ) ) {
@@ -21,7 +19,6 @@ if ( ! empty( $block['align'] ) ) {
 $selection = get_field( 'selection' );
 
 $events = array();
-
     
 if($selection === 'manual') {
    
@@ -44,7 +41,6 @@ if($selection === 'next') {
     
     uasort( $allEvents, 'event_order_by_date' );
 
-
     foreach( $allEvents as $singleEvent){
         if( strtotime( str_replace( '/', '-', get_field( 'facts', $singleEvent->ID )['date'] ) ) > strtotime( str_replace( '/', '-',date( 'd/m/Y' ) ) ) ){
             if( count($events) < 3 ){
@@ -53,9 +49,7 @@ if($selection === 'next') {
         }
     }
 }
-
 ?>
-
 
 <div <?php echo $anchor; ?>class="<?php echo esc_attr( $class_name ); ?> event-teaser-container" style="">
     <?php
