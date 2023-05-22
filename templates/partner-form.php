@@ -20,7 +20,7 @@ get_header();
 
 		);
 		$contacts = new WP_Query($args);
-		echo '<h1>'count($contacts)'</h1>';
+		//echo '<h1>'.count($contacts).'</h1>';
 
 		if(isset($_GET["success"])){
 			echo '<div class="acf-form-success-message"><p>Your form is sent sucessfull!</p></div>';
