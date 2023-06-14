@@ -9,7 +9,8 @@ get_header();
 
 $args = array(
     'post_status' => 'publish',
-    'post_type' => 'insight'
+    'post_type' => 'insight',
+    'posts_per_page' => '-1'
 );
 $insights = new WP_Query($args);
 

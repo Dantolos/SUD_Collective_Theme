@@ -27,7 +27,8 @@ if($selection === 'manual') {
 if($selection === 'next') {
     $args = array(
         'post_status' => 'publish',
-        'post_type' => 'event'
+        'post_type' => 'event',
+        'posts_per_page' => '-1'
     );
     $eventObject = new WP_Query($args);
     $allEvents = $eventObject->posts;
