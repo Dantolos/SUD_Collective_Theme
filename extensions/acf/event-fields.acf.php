@@ -194,7 +194,7 @@
                             'name' => 'Thumb',
                             'aria-label' => '',
                             'type' => 'image',
-                            'instructions' => 'Landscape format recommended.',
+                            'instructions' => 'Landscape format recommended. Max width is 1200px, max height is 800px.',
                             'required' => 1,
                             'conditional_logic' => 0,
                             'wrapper' => array(
@@ -210,7 +210,7 @@
                             'max_width' => '1200',
                             'max_height' => '800',
                             'max_size' => '',
-                            'mime_types' => '',
+                            'mime_types' => 'png, jpg',
                             'preview_size' => 'medium',
                         ),
                     ),

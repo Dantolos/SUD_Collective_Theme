@@ -38,11 +38,13 @@ class Navigationbar {
             
             $this->html .= '<nav id="navigation-menu-mobile" >';
                 //menu items
-                foreach( wp_get_nav_menu_items('Header Menu') as $menuitem)
-                {
-                    $this->html .= '<a href="'.$menuitem->url.'">';
-                        $this->html .= '<h2>'.$menuitem->title.'</h2>';
-                    $this->html .= '</a>';
+                if(is_array(wp_get_nav_menu_items('Header Menu'))){
+                    foreach( wp_get_nav_menu_items('Header Menu') as $menuitem)
+                    {
+                        $this->html .= '<a href="'.$menuitem->url.'">';
+                            $this->html .= '<h2>'.$menuitem->title.'</h2>';
+                        $this->html .= '</a>';
+                    }
                 }
             $this->html .= '</nav>';
         $this->html .= '</div>';
