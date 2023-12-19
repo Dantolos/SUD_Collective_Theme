@@ -114,6 +114,32 @@ if( function_exists('acf_add_local_field_group') ):
                 'placeholder' => '',
             ),
         ),
+        array(
+			'key' => 'field_65806d4eac6b3',
+			'label' => 'Ressources',
+			'name' => 'ressources',
+			'aria-label' => '',
+			'type' => 'taxonomy',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'taxonomy' => 'ressources',
+			'add_term' => 1,
+			'save_terms' => 1,
+			'load_terms' => 0,
+			'return_format' => 'object',
+			'field_type' => 'checkbox',
+			'bidirectional' => 0,
+			'multiple' => 0,
+			'allow_null' => 0,
+			'bidirectional_target' => array(
+			),
+		),
         'location' => array(
             array(
                 array(
