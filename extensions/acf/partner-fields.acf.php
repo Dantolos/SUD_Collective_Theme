@@ -1,9 +1,8 @@
-<?php
-
+<?php 
 if( function_exists('acf_add_local_field_group') ):
 
-    acf_add_local_field_group(array(
-        'key' => 'group_63da8dc038556',
+    acf_add_local_field_group( array(
+        'key' => 'group_63da8dc0385526',
         'title' => 'Partner Fields',
         'fields' => array(
             array(
@@ -13,7 +12,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'aria-label' => '',
                 'type' => 'text',
                 'instructions' => '',
-                'required' => 1,
+                'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
                     'width' => '',
@@ -33,7 +32,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'aria-label' => '',
                 'type' => 'textarea',
                 'instructions' => '',
-                'required' => 1,
+                'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
                     'width' => '',
@@ -53,7 +52,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'aria-label' => '',
                 'type' => 'image',
                 'instructions' => '',
-                'required' => 1,
+                'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
                     'width' => '30',
@@ -113,39 +112,53 @@ if( function_exists('acf_add_local_field_group') ):
                 'default_value' => '',
                 'placeholder' => '',
             ),
+            array(
+                'key' => 'field_658190342111d',
+                'label' => 'Test',
+                'name' => 'test',
+                'aria-label' => '',
+                'type' => 'text',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'maxlength' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+            ),
+            array(
+                'key' => 'field_658192f565d28',
+                'label' => 'Tessst',
+                'name' => 'tessst',
+                'aria-label' => '',
+                'type' => 'text',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'maxlength' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+            ),
         ),
-        array(
-			'key' => 'field_65806d4eac6b3',
-			'label' => 'Ressources',
-			'name' => 'ressources',
-			'aria-label' => '',
-			'type' => 'taxonomy',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'taxonomy' => 'ressources',
-			'add_term' => 1,
-			'save_terms' => 1,
-			'load_terms' => 0,
-			'return_format' => 'object',
-			'field_type' => 'checkbox',
-			'bidirectional' => 0,
-			'multiple' => 0,
-			'allow_null' => 0,
-			'bidirectional_target' => array(
-			),
-		),
         'location' => array(
             array(
                 array(
                     'param' => 'post_type',
                     'operator' => '==',
-                    'value' => 'partner',
+                    'value' => 'post',
                 ),
             ),
         ),
@@ -158,6 +171,9 @@ if( function_exists('acf_add_local_field_group') ):
         'active' => true,
         'description' => '',
         'show_in_rest' => 1,
-    ));
+    ) );
+
+    
+    
     
     endif;

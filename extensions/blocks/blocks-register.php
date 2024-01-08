@@ -10,5 +10,8 @@ function register_acf_blocks() {
 
     register_block_type( __DIR__ . '/partner-grid' );
     require_once( __DIR__ . '/partner-grid/partner-grid-block.acf.php' );
+
+    register_block_type( __DIR__ . '/hero' );
+    require_once( __DIR__ . '/hero/hero.acf.php' );
 }
 

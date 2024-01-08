@@ -20,8 +20,7 @@ $selection = get_field( 'selection' );
 
 $events = array();
     
-if($selection === 'manual') {
-   
+if($selection === 'manual') { 
     $events = get_field( 'events' ) ?: 'Choose comming up events ';
 }
 if($selection === 'next') {

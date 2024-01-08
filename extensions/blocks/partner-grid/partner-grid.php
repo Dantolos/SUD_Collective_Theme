@@ -15,8 +15,7 @@ if ( ! empty( $block['className'] ) ) {
 if ( ! empty( $block['align'] ) ) {
     $class_name .= ' align' . $block['align'];
 }
-
-
+ 
 // Load values and assign defaults.
 $partners = get_field( 'partner' ) ?: 'Choose partners ';
 $minWidth = get_field( 'width' ) ?: '200';

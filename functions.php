@@ -338,5 +338,5 @@ add_action('init', function () {
 /*-------------------CUSTOM API ENDPOINT-----------------------*/
 /*-------------------------------------------------------------*/
 
-//require_once(dirname(__FILE__).'/extensions/api/post.api.php');
+require_once(dirname(__FILE__).'/extensions/api/partner.api.php');
 
