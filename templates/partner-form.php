@@ -33,7 +33,13 @@ get_header();
 					'post_type' => 'partner',
 					'post_status' => 'draft'
 				),
-				//'fields' => array( 'field_63da910570a25' ),
+				'fields' => array( 
+					'field_63da8dc0c6870', 
+					'field_63da8df1c6872', 
+					'field_63da8de6c6871',
+					'field_63e51416f7cc6',
+					'field_63da8e1ad73c7',
+				),
 				'return' => '?success',
 				'honeypot' => false,
 				'submit_value' => 'Join the collective',

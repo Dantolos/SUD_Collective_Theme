@@ -293,6 +293,7 @@ ol li {
   flex-direction: column;
 }
 .SUD-ACF-Form .acf-form {
+  width: 95vw;
   max-width: 1200px;
   margin: 50px 0;
 }

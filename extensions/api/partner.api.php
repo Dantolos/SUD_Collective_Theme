@@ -1,4 +1,3 @@
-
 <?php
 
 //CALLBACK DATA
@@ -9,7 +8,7 @@ function partner_api($request) {
     //query
     $args = array(
         'post_type' => 'partner',
-        'numberposts' => -1
+        'posts_per_page' => -1
    );
 
     $query = new WP_Query( $args );
@@ -26,32 +25,40 @@ function partner_api($request) {
         $partner_categories = wp_get_post_terms($post->ID, 'partner_category');
 
         if( !empty($partner_categories) ){
-            foreach( $partner_categories as $category ){
-                    $terms['partner_categories'][$category->slug] = [$category->term_id, $category->name];
+            foreach( $partner_categories as $key => $category ){
+					$terms['partner_categories'][$key][id] = $category->term_id;
+					$terms['partner_categories'][$key][name] = $category->name; 
+					$terms['partner_categories'][$key][slug] = $category->slug;
             }
         }
 
         $ressources = wp_get_post_terms($post->ID, 'ressources');
 
         if( !empty($ressources) ){
-            foreach( $ressources as $ressource ){
-                    $terms['ressources'][$ressource->slug] = [$ressource->term_id, $ressource->name];
+            foreach( $ressources as $key => $ressource ){
+					$terms['ressources'][$key][id] = $ressource->term_id;
+					$terms['ressources'][$key][name] = $ressource->name;
+					$terms['ressources'][$key][slug] = $ressource->slug;
             }
         }
 
         $type_of_businesses = wp_get_post_terms($post->ID, 'type_of_business');
 
         if( !empty($type_of_businesses) ){
-            foreach( $type_of_businesses as $type_of_business ){
-                    $terms['type_of_business'][$type_of_business->slug] = [$type_of_business->term_id, $type_of_business->name];
+            foreach( $type_of_businesses as $key => $type_of_business ){ 
+					$terms['type_of_business'][$key][id] = $type_of_business->term_id;
+					$terms['type_of_business'][$key][name] = $type_of_business->name;
+					$terms['ressources'][$key][slug] = $ressource->slug;
             }
         }
 
         $stages = wp_get_post_terms($post->ID, 'stage');
 
         if( !empty($stages) ){
-            foreach( $stages as $stage ){
-                    $terms['stage'][$stage->slug] = [$stage->term_id, $stage->name];
+            foreach( $stages as $key => $stage ){
+					$terms['stage'][$key][id] = $stage->term_id;
+					$terms['stage'][$key][name] = $stage->name;
+					$terms['stage'][$key][slug] = $stage->slug;
             }
         }
 

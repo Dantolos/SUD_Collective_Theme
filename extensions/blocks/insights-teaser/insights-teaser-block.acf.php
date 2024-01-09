@@ -26,7 +26,7 @@ acf_add_local_field_group(array(
 			'return_format' => 'id',
 			'multiple' => 1,
 			'allow_null' => 0,
-			'ui' => 1,
+			'ui' => 1, 
 		),
 	),
 	'location' => array(
