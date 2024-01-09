@@ -1,0 +1,42 @@
+.boxes-wrapper {
+     display: flex;
+     gap: 20px;
+}
+
+.box-container {
+     width: 33%;
+     padding: 40px 20px;
+     border-radius: 20px;
+     display: flex;
+     flex-direction: column;
+     gap: 40px; 
+}
+
+.box-icon {
+     max-width: 60%;
+     align-self: center;
+     justify-self: center;
+}
+.box-container h3 { font-family: "mediasans-bold" !important; text-align: center;}
+.box-container ul {
+     padding-left: 20px;
+}
+
+@media only screen and (max-width: 1024px) {
+     .boxes-wrapper {
+          flex-wrap: wrap;
+          gap: 2%;
+     }
+     .box-container {
+          width: 49%;
+     }
+}
+@media only screen and (max-width: 600px) {
+     .boxes-wrapper {
+          flex-wrap: wrap;
+          gap: 2%;
+     }
+     .box-container {
+          width: 100%;
+     }
+}

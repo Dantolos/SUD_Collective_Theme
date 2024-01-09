@@ -1,0 +1,14 @@
+{
+     "name": "acf/boxes",
+     "title": "Boxes",
+     "description": "Show upcoming events.",
+     "style": [ "file:./boxes.css" ],
+     "category": "SUD Collective",
+     "icon": "lightbulb",
+     "keywords": ["boxes", "teaser", "sud"],
+     "acf": {
+         "mode": "preview",
+         "renderTemplate": "./boxes.php"
+     },
+     "align": "full"
+ }

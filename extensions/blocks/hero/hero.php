@@ -50,7 +50,7 @@ if (!function_exists('cast_hero_type_1')) {
         $hero_type_1 .= '</div>';
 
         //Content
-        $hero_type_1 .= '<div class="hero-content-container">';
+        $hero_type_1 .= '<div class="hero-content-container">'; 
         $hero_type_1 .= '<h1 class="fl c-orange">'. $data['title'] .'</h1>';
         $hero_type_1 .= '<h3 class="fs c-blue gtalpina">'. $data['subtitle'] .'</h3>';
         if($data['button']){ 
@@ -92,7 +92,8 @@ if (!function_exists('cast_hero_type_2')) {
             $hero_type_2 .= '</div>';
 
             $hero_type_2 .= '<div class="hero-col hero-col-right">';
-                $hero_type_2 .= '<h2 class="c-orange fl">'.$data['title'].'</h2>';
+                $hero_type_2 .= '<h4 class="has-secondary-color-color fl">'.$data['subtitle'].'</h4>';
+                $hero_type_2 .= '<h2 class="has-primary-color-color fl">'.$data['title'].'</h2>';
                 $hero_type_2 .= '<p class="c-blue">'.$data['text'].'</p>';
             $hero_type_2 .= '</div>';
         $hero_type_2 .= '</div>';

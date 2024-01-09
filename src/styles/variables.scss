@@ -1,6 +1,7 @@
 $primaryColor: #942F6D;
 $secondaryColor: #7C70B1;
-$thirdColor: #C3B1D7;
+$thirdColor: #C3B1D7; 
+
 
 $darkColor: #3C1438;
 
@@ -36,7 +37,7 @@ $darkColor: #3C1438;
     background-color:$darkColor;
 }
 
-$dropshadow:1px 1px 26px -2px rgba(0, 0, 0, 0.2);
+$dropshadow:1px 1px 26px -2px $thirdColor;
 :root { --dropshadow: $dropshadow; }
 
 @mixin dropshadow {
@@ -44,6 +45,10 @@ $dropshadow:1px 1px 26px -2px rgba(0, 0, 0, 0.2);
     box-shadow: $dropshadow;
     -webkit-box-shadow: $dropshadow;
     -moz-box-shadow: $dropshadow;
+}
+
+.dropshadow { 
+    @include dropshadow();
 }
 
 @mixin primarybtn {

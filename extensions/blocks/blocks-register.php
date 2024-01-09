@@ -16,5 +16,8 @@ function register_acf_blocks() {
 
     register_block_type( __DIR__ . '/program' );
     require_once( __DIR__ . '/program/program.acf.php' );
+
+    register_block_type( __DIR__ . '/boxes' );
+    require_once( __DIR__ . '/boxes/boxes.acf.php' );
 }
 
