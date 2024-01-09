@@ -43,7 +43,7 @@
                                 ),
                                 array(
                                     'key' => 'field_63da909370a23',
-                                    'label' => 'Lead',
+                                    'label' => 'Description',
                                     'name' => 'lead',
                                     'aria-label' => '',
                                     'type' => 'textarea',
