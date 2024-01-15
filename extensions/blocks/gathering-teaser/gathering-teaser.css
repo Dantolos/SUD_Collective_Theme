@@ -1,0 +1,48 @@
+.block-gathering-teaser-wrapper {
+     display:flex;
+     gap: 4%;
+}
+
+.gathering-left-container {
+     width: 48%;
+     border-radius: 20px;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+}
+
+.gathering-right-container {
+     width: 48%;
+}
+
+.infopoint-wrapper {}
+
+.infopoint-row {
+     display:flex;
+     gap: 5%;
+     align-items: center;
+     justify-content: center;
+}
+.infopoint-icon {
+     width: 20%;
+     
+}
+.infopoint-icon > img {
+     max-width: 100%;
+}
+.infopoint-content {
+     width: 70%;
+}
+.infopoint-content > p {
+     margin-bottom:0;
+}
+
+@media only screen and (max-width: 600px) {
+     .block-gathering-teaser-wrapper {
+          flex-wrap: wrap;
+     }
+     .gathering-left-container { height: 75vw; }
+     .gathering-left-container, .gathering-right-container {
+          width: 100%;
+     }
+}

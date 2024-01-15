@@ -19,5 +19,8 @@ function register_acf_blocks() {
 
     register_block_type( __DIR__ . '/boxes' );
     require_once( __DIR__ . '/boxes/boxes.acf.php' );
+    
+    register_block_type( __DIR__ . '/gathering-teaser' );
+    require_once( __DIR__ . '/gathering-teaser/gathering-teaser.acf.php' );
 }
 

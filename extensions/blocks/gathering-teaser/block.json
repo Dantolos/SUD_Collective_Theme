@@ -1,0 +1,15 @@
+{
+     "name": "acf/gathering-teaser",
+     "title": "Gathering Teaser",
+     "description": "Show upcoming Gathering.",
+     "style": [ "file:./gathering-teaser.css" ],
+     "script": "block-gathering-teaser",
+     "category": "Startup Days",
+     "icon": { "foreground": "#1582BE",  "src": "align-full-width"},
+     "keywords": ["gathering", "teaser", "sud"],
+     "acf": {
+         "mode": "preview",
+         "renderTemplate": "./gathering-teaser.php"
+     },
+     "align": "full"
+}
