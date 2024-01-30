@@ -10,7 +10,7 @@ class Date_Format {
                //TIME
                //var_dump($value);
                $time = '';
-
+ 
                
                $value = strtotime( str_replace( '/', '-',  $value) );
                $lang = (apply_filters( 'wpml_current_language', NULL ) ) ? apply_filters( 'wpml_current_language', NULL )  : 'en';

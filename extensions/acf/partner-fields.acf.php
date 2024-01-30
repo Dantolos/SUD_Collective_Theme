@@ -112,6 +112,26 @@ if( function_exists('acf_add_local_field_group') ):
                 'default_value' => '',
                 'placeholder' => '',
             ),
+            array(
+                'key' => 'field_65b8f973a9e9a',
+                'label' => 'Map',
+                'name' => 'map',
+                'aria-label' => '',
+                'type' => 'true_false',
+                'instructions' => 'Soll der Partner auf der Map aufgeführt werden?',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '20',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => '',
+                'default_value' => 1,
+                'ui_on_text' => 'Ja',
+                'ui_off_text' => 'Nein',
+                'ui' => 1,
+            ),
         ),
         'location' => array(
             array(
