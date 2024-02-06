@@ -11,7 +11,7 @@ get_header();
 
 
 <main>
-	<article class="SUD-ACF-Form">
+	<article class="SUD-ACF-Form"> 
 		<h1>Add your Event</h1>
         <?php
 		acf_form(
@@ -25,7 +25,8 @@ get_header();
 				'post_content' => false,
 				'fields' => array( 
 					'field_63da910570a25',
-					'field_63da914b70a26'
+					'field_63da914b70a26',
+					'field_63da94bca8cb2',
 				),
 				'return' => '%post_url%&action=create&updated=true',
 				'honeypot' => false,
