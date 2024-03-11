@@ -22,5 +22,8 @@ function register_acf_blocks() {
     
     register_block_type( __DIR__ . '/gathering-teaser' );
     require_once( __DIR__ . '/gathering-teaser/gathering-teaser.acf.php' );
+
+    register_block_type( __DIR__ . '/speaker-grid' );
+    require_once( __DIR__ . '/speaker-grid/speaker-grid.acf.php' );
 }
 
