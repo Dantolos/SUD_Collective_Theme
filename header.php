@@ -38,6 +38,13 @@
             src: url('<?php echo get_template_directory_uri(); ?>/assets/fonts/mediasansweb-bold.eot?#iefix') format('embedded-opentype'),
                   url('<?php echo get_template_directory_uri(); ?>/assets/fonts/mediasansweb-bold.woff') format('woff');
       }
+      @font-face {
+        font-family: 'mediasans-regular';
+            src: url('<?php echo get_template_directory_uri(); ?>/assets/fonts/mediasansweb-regular.eot');
+            src: url('<?php echo get_template_directory_uri(); ?>/assets/fonts/mediasansweb-regular.eot?#iefix') format('embedded-opentype'),
+                  url('<?php echo get_template_directory_uri(); ?>/assets/fonts/mediasansweb-regular.woff') format('woff'),
+                  url('<?php echo get_template_directory_uri(); ?>/assets/fonts/mediasansweb-regular.woff2') format('woff2');
+      }
     </style>
   </head>
   <body <?php body_class(); ?>>
