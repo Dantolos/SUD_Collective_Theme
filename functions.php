@@ -206,6 +206,7 @@ function dashicons_front_end() {
 add_action( 'init', 'sud_register_block_script' );
 function sud_register_block_script() {
   wp_register_script( 'block-partner-grid', get_template_directory_uri() . '/extensions/blocks/partner-grid/partner-grid.js', [ 'jquery', 'acf' ] );
+  wp_register_script( 'block-program', get_template_directory_uri() . '/extensions/blocks/program/program.js', [ 'jquery', 'acf' ], false, true );
 }
 
 
@@ -233,32 +234,32 @@ function lh_acf_save_post( $post_id ) {
 
   // Get title from 'event' CPT acf field 'content[title]'
   if ( get_post_type( $post_id ) == 'event' ) {
-      $new_title = get_field( 'content', $post_id )['title'];
-      $new_slug = sanitize_title( $new_title );
-      $type = "Event";
+    $new_title = get_field( 'content', $post_id )['title'];
+    $new_slug = sanitize_title( $new_title );
+    $type = "Event";
   }
 
   // Get title from 'partner' CPT acf field 'company'
   if ( get_post_type( $post_id ) == 'partner') {
-      $new_title = get_field( 'company', $post_id );
-      $new_slug = sanitize_title( $new_title );
-      $type = "Partner";
+    $new_title = get_field( 'company', $post_id );
+    $new_slug = sanitize_title( $new_title );
+    $type = "Partner";
   }
 
   if ( get_post_type( $post_id ) == 'contact') {
     $new_title = get_field( 'first_name', $post_id ) . ' ' . get_field( 'last_name', $post_id );
     $new_slug = sanitize_title( $new_title );
     $type = "Contact";
-}
+  }
 
   // Prevent iInfinite looping...
   remove_action( 'acf/save_post', 'lh_acf_save_post' );
 
   // Grab post data
   $post = array(
-      'ID'            => $post_id,
-      'post_title'    => $new_title,
-      'post_name'     => $new_slug,
+    'ID'            => $post_id,
+    'post_title'    => $new_title,
+    'post_name'     => $new_slug,
   );
 
   // Update the Post

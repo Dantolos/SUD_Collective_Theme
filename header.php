@@ -40,10 +40,10 @@
       }
       @font-face {
         font-family: 'mediasans-regular';
-            src: url('<?php echo get_template_directory_uri(); ?>/assets/fonts/mediasansweb-regular.eot');
-            src: url('<?php echo get_template_directory_uri(); ?>/assets/fonts/mediasansweb-regular.eot?#iefix') format('embedded-opentype'),
-                  url('<?php echo get_template_directory_uri(); ?>/assets/fonts/mediasansweb-regular.woff') format('woff'),
-                  url('<?php echo get_template_directory_uri(); ?>/assets/fonts/mediasansweb-regular.woff2') format('woff2');
+            src: url('<?php echo get_template_directory_uri(); ?>/assets/fonts/mediasans-regular.eot');
+            src: url('<?php echo get_template_directory_uri(); ?>/assets/fonts/mediasans-regular.eot?#iefix') format('embedded-opentype'),
+                  url('<?php echo get_template_directory_uri(); ?>/assets/fonts/mediasans-regular.woff') format('woff'),
+                  url('<?php echo get_template_directory_uri(); ?>/assets/fonts/mediasans-regular.woff2') format('woff2');
       }
     </style>
   </head>

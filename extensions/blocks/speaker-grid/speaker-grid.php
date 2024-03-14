@@ -24,7 +24,6 @@ $speakers = get_field('speakers') ?: null;
                               <p><?php echo $speaker['speaker_function'] ?></p>
                          </div>
                          <div class="speaker-hidden-content">
-                             
                               <div class="speaker-cv">
                                    <?php echo $speaker['cv'] ?>
                                    <?php if($speaker['linkedin']) : ?>
