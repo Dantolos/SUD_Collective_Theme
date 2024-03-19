@@ -63,7 +63,7 @@
 
 .speaker-cv a { margin:0; }
 
-.speaker-hidden-content { display: none; }
+.speaker-hidden-content { display: none; margin-bottom: 0 !important; }
 .speaker-visible-content { display: block; }
 
 .speaker-container:hover .speaker-hidden-content { display: block; }
