@@ -61,6 +61,8 @@
     
 }
 
+.speaker-cv a { margin:0; }
+
 .speaker-hidden-content { display: none; }
 .speaker-visible-content { display: block; }
 
