@@ -58,7 +58,7 @@
      gap: 10px;
      justify-content: flex-end;
      align-items: flex-end;
-    
+     margin-bottom: 0 !important;
 }
 
 .speaker-cv a { margin:0; }
