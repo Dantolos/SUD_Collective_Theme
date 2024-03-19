@@ -44,7 +44,7 @@
      left: 0;
      right: 0;
      padding: 5%;
-     
+     margin-bottom:0 !important;
 }
 .speaker-info h4 { font-family: "mediasans-regular" !important; font-size:28px; font-weight: 300; text-align: center; }
 .speaker-info h4,
