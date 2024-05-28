@@ -3,20 +3,28 @@
      justify-content: center;
      align-items: center;
      margin: 20px 0;
+     gap:20px;
+     
+     flex-direction: row;
 }
+
 
 .working-group-left-container {
      width: 30%;
+    
+}
+
+.working-group-left-container img {
+     max-width: 100%;
+     
 }
 
 .working-group-right-container {
      width: 70%;
+     min-width: 300px;
 }
 
-.working-group-right-container img {
-     max-width: 100%;
-     
-}
+
 
 .working-group-right-container button {
      padding: 8px 20px;
@@ -42,4 +50,13 @@
 .working-group-leader-avatar-text p {
      line-height: 1.2em;
      margin:0;
+}
+
+@media only screen and (max-width: 600px) {
+     .working-group-container {
+          flex-wrap: wrap;
+     }
+     .working-group-left-container {
+          width: 100%; 
+     }
 }
