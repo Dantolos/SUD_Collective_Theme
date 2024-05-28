@@ -25,5 +25,8 @@ function register_acf_blocks() {
 
     register_block_type( __DIR__ . '/speaker-grid' );
     require_once( __DIR__ . '/speaker-grid/speaker-grid.acf.php' );
+    
+    register_block_type( __DIR__ . '/working-group' );
+    require_once( __DIR__ . '/working-group/working-group.acf.php' );
 }
 

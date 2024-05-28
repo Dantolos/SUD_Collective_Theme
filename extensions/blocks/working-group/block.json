@@ -1,0 +1,15 @@
+{
+     "name": "acf/working-group",
+     "title": "Working Group",
+     "description": "Show the Poster of a Working Group.",
+     "style": [ "file:./working-group.css" ],
+     "category": "SUD Collective",
+     "script": "block-working-group",
+     "icon": "admin-links",
+     "keywords": ["working", "group", "poster", "sud"],
+     "acf": {
+         "mode": "preview",
+         "renderTemplate": "./working-group.php"
+     },
+     "align": "full"
+ } 
