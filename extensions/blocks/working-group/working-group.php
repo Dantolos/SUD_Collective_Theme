@@ -18,12 +18,12 @@ $poster_file = get_field('poster_file') ?: null;
      </div>     
      <div class="working-group-right-container">
           <div class="working-group-informations">
-               <h3><?php echo $group_content['title']; ?></h3>
+               <h3 class="has-primary-color-color "><?php echo $group_content['title']; ?></h3>
                <p><?php echo $group_content['description']; ?></p>
 
                <?php if($group_content['leader']) {
                     echo '<div class="working-group-leader">';
-                         echo '<h4>'.__("Leader").'</h4>';
+                         echo '<h4 class="has-primary-color-color ">'.__("Leader").'</h4>';
                          echo '<div class="working-group-leader-label">';
                               echo '<div class="working-group-leader-avatar" style="background-image:url('.$group_content['leader']['portrait'].');"></div>';
                               echo '<div class="working-group-leader-avatar-text">';
