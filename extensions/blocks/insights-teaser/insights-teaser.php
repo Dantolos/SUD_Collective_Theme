@@ -6,6 +6,7 @@ $anchor = '';
 if ( ! empty( $block['anchor'] ) ) {
     $anchor = 'id="' . esc_attr( $block['anchor'] ) . '" ';
 }
+$hideBlock = get_field('hide_block') ? 'display: none;' : '';
 
 // Create class attribute allowing for custom "className" and "align" values.
 $class_name = 'testimonial-block';
@@ -29,7 +30,7 @@ $dateFormat = new \sud\helper\date\Date_Format;
 ?>
 
 
-<div <?php echo $anchor; ?>class="<?php echo esc_attr( $class_name ); ?> insight-teaser-container" style="">
+<div <?php echo $anchor; ?>class="<?php echo esc_attr( $class_name ); ?> insight-teaser-container" style="<?php echo $hideBlock; ?>">
     <?php
     if( is_array($insights)) {
         foreach($insights as $insight){

@@ -2,12 +2,11 @@
 get_header(); ?>
 
 
-
 <?php
-    
+
     echo the_content();
-    echo the_field('title', 46); 
+    echo the_field('title', 46);
 ?>
 
-<?php 
+<?php
 get_footer();

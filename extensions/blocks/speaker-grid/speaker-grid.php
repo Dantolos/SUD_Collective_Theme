@@ -6,12 +6,13 @@ $anchor = '';
 if ( ! empty( $block['anchor'] ) ) {
     $anchor = 'id="' . esc_attr( $block['anchor'] ) . '" ';
 }
+$hideBlock = get_field('hide_block') ? 'display: none;' : '';
 
 $speakers = get_field('speakers') ?: null;
- 
+
 ?>
 
-<div <?php echo $anchor; ?>class=" block-speaker-grid-container default-container" style="padding-top:0; padding-bottom:0;">
+<div <?php echo $anchor; ?>class=" block-speaker-grid-container default-container" style="padding-top:0; padding-bottom:0; <?php echo $hideBlock; ?>">
      <h2><?php echo get_field('title'); ?></h2>
      <?php if($speakers) {
           foreach($speakers as $speaker){ ?>

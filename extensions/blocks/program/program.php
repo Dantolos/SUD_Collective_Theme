@@ -7,9 +7,11 @@ if ( ! empty( $block['anchor'] ) ) {
     $anchor = 'id="' . esc_attr( $block['anchor'] ) . '" ';
 }
 
-?> 
+$hideBlock = get_field('hide_block') ? 'display: none;' : '';
 
-<div <?php echo $anchor; ?>class=" block-program-container default-container" style="padding-top:0; padding-bottom:0;">
+?>
+
+<div <?php echo $anchor; ?>class=" block-program-container default-container" style="padding-top:0; padding-bottom:0; <?php echo $hideBlock; ?>">
 
      <div class="default-content">
 
@@ -17,9 +19,9 @@ if ( ! empty( $block['anchor'] ) ) {
           <p style="margin-bottom:40px;"><?php echo get_field('description') ?></p>
           <div class="program-list-wrapper">
                <?php if(get_field('program_rows')) {
-                    
+
                     foreach( get_field('program_rows') as $progrm_row) {
-                         $has_subcontent = ( $progrm_row['content']['program_subtitle'] ) ? true : false; 
+                         $has_subcontent = ( $progrm_row['content']['program_subtitle'] ) ? true : false;
                          $subcontent_class = $has_subcontent ? 'has_subcontent' : '';
                          echo '<div class="program-row dropshadow '.$subcontent_class.'">';
                               echo '<div class="program-row-time">';
@@ -38,5 +40,5 @@ if ( ! empty( $block['anchor'] ) ) {
                }?>
           </div>
      </div>
- 
+
 </div>

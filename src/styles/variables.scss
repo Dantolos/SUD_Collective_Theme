@@ -1,7 +1,9 @@
 $primaryColor: #942F6D;
-$secondaryColor: #7C70B1;
-$thirdColor: #C3B1D7; 
+$secondaryColor: #D382B3;
+$thirdColor: #942F6D;
 
+
+$thirdColorLight: lighten($thirdColor, 10%);
 
 $darkColor: #3C1438;
 
@@ -10,7 +12,7 @@ $darkColor: #3C1438;
 }
 
 .has-secondary-color-color {
-    color:$secondaryColor; 
+    color:$secondaryColor;
 }
 
 .has-third-color-color {
@@ -37,7 +39,9 @@ $darkColor: #3C1438;
     background-color:$darkColor;
 }
 
-$dropshadow:1px 1px 26px -2px $thirdColor;
+
+
+$dropshadow:1px 1px 26px -2px lighten( $thirdColor, 30% );
 :root { --dropshadow: $dropshadow; }
 
 @mixin dropshadow {
@@ -47,7 +51,7 @@ $dropshadow:1px 1px 26px -2px $thirdColor;
     -moz-box-shadow: $dropshadow;
 }
 
-.dropshadow { 
+.dropshadow {
     @include dropshadow();
 }
 
@@ -84,7 +88,7 @@ button {
 
 
 @mixin scrollbars(
-  $size: 8px, 
+  $size: 8px,
   $foreground-color: $thirdColor,
   $background-color: none
 ) {
@@ -109,5 +113,5 @@ button {
     -o-hyphens: auto;
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
-    hyphens: auto; 
+    hyphens: auto;
 }

@@ -72,11 +72,11 @@ body {
 }
 
 .has-secondary-color-color {
-  color: #7C70B1;
+  color: #D382B3;
 }
 
 .has-third-color-color {
-  color: #C3B1D7;
+  color: #942F6D;
 }
 
 .has-dark-color-color {
@@ -88,11 +88,11 @@ body {
 }
 
 .has-secondary-color-background-color {
-  background-color: #7C70B1;
+  background-color: #D382B3;
 }
 
 .has-third-color-background-color {
-  background-color: #C3B1D7;
+  background-color: #942F6D;
 }
 
 .has-dark-color-background-color {
@@ -104,9 +104,9 @@ body {
 }
 
 .dropshadow {
-  box-shadow: 1px 1px 26px -2px #C3B1D7;
-  -webkit-box-shadow: 1px 1px 26px -2px #C3B1D7;
-  -moz-box-shadow: 1px 1px 26px -2px #C3B1D7;
+  box-shadow: 1px 1px 26px -2px rgb(215.9538461538, 132.0461538462, 183.5538461538);
+  -webkit-box-shadow: 1px 1px 26px -2px rgb(215.9538461538, 132.0461538462, 183.5538461538);
+  -moz-box-shadow: 1px 1px 26px -2px rgb(215.9538461538, 132.0461538462, 183.5538461538);
 }
 
 button {
@@ -117,7 +117,7 @@ button {
   border: 0;
 }
 button:hover {
-  background-color: #7C70B1;
+  background-color: #D382B3;
   cursor: pointer;
 }
 
@@ -242,14 +242,14 @@ ol li {
   max-height: 80vh;
   border-radius: 20px;
   overflow-y: scroll;
-  scrollbar-color: #C3B1D7 none;
+  scrollbar-color: #942F6D none;
 }
 .sud-lightbox-container .sud-lightbox::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 .sud-lightbox-container .sud-lightbox::-webkit-scrollbar-thumb {
-  background: #C3B1D7;
+  background: #942F6D;
 }
 .sud-lightbox-container .sud-lightbox::-webkit-scrollbar-track {
   background: none;
@@ -351,12 +351,12 @@ a:link, a:visited {
 }
 
 a:hover {
-  color: #7C70B1;
+  color: #D382B3;
 }
 
 /* SINGLE PAGE */
 .event-body {
-  background-color: rgba(124, 112, 177, 0.08);
+  background-color: rgba(211, 130, 179, 0.08);
   min-height: 80vh;
   padding: 5vh 5vw;
   display: flex;
@@ -606,11 +606,11 @@ a:hover {
 }
 #mobile-navigation #navigation-menu-mobile h2:hover {
   transform: scale(1.05);
-  color: #C3B1D7 !important;
+  color: #942F6D !important;
 }
 
 #footer-container {
-  background-color: #C3B1D7;
+  background-color: #942F6D;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

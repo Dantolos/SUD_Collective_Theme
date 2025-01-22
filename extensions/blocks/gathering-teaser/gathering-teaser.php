@@ -6,21 +6,22 @@ $anchor = '';
 if ( ! empty( $block['anchor'] ) ) {
     $anchor = 'id="' . esc_attr( $block['anchor'] ) . '" ';
 }
+$hideBlock = get_field('hide_block') ? 'display: none;' : '';
 
 ?>
 
-<div <?php echo $anchor; ?>class=" block-gathering-teaser-container default-container" style="padding-top:0; padding-bottom:0;">
+<div <?php echo $anchor; ?>class=" block-gathering-teaser-container default-container" style="padding-top:0; padding-bottom:0; <?php echo $hideBlock; ?>">
 
      <div class="default-content block-gathering-teaser-wrapper">
 
           <div class="gathering-left-container" style="background-image:url(<?php echo get_field('image'); ?>);">
-               
+
           </div>
           <div class="gathering-right-container">
                <h3 class="has-primary-color-color"><?php echo get_field('title'); ?></h3>
                <p class="has-secondary-color-color"><?php echo get_field('description') ?></p>
 
-               <?php 
+               <?php
                if(get_field('infopoint')){
                     echo '<div class="infopoint-wrapper">';
                     foreach(get_field('infopoint') as $key => $point){
@@ -42,5 +43,5 @@ if ( ! empty( $block['anchor'] ) ) {
                               <a href="<?php echo get_field('button')['url']; ?>"><button style="font-family: 'mediasans-bold';"><?php echo get_field('button')['title']; ?></button></a>
           </div>
      </div>
- 
+
 </div>

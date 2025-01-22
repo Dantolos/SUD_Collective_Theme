@@ -5,10 +5,12 @@ $anchor = '';
 if ( ! empty( $block['anchor'] ) ) {
     $anchor = 'id="' . esc_attr( $block['anchor'] ) . '" ';
 }
+$hideBlock = get_field('hide_block') ? 'display: none;' : '';
+
 
 ?>
 
-<div <?php echo $anchor; ?>class=" block-boxes-container default-container" style="padding-top:0; padding-bottom:0;">
+<div <?php echo $anchor; ?>class=" block-boxes-container default-container" style="<?php echo $hideBlock; ?> padding-top:0; padding-bottom:0;">
 
      <div class="default-content">
 

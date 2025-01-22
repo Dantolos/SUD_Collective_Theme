@@ -1,6 +1,6 @@
 <?php
 $theme = wp_get_theme();
-define('THEME_VERSION', $theme->Version); 
+define('THEME_VERSION', $theme->Version);
 
 function boilerplate_load_assets() {
   wp_enqueue_script('ourmainjs', get_theme_file_uri('/build/index.js'), array('wp-element'), THEME_VERSION, true);
@@ -99,7 +99,7 @@ require_once(dirname(__FILE__).'/extensions/blocks/blocks-register.php');
 /*-------------------------------------------------------------*/
 add_filter( 'wp_check_filetype_and_ext', 'my_svgs_disable_real_mime_check', 10, 4 );
 function my_svgs_disable_real_mime_check( $data, $file, $filename, $mimes ) {
-  $wp_filetype = wp_check_filetype( $filename, $mimes );	
+  $wp_filetype = wp_check_filetype( $filename, $mimes );
   $ext = $wp_filetype['ext'];
   $type = $wp_filetype['type'];
   $proper_filename = $data['proper_filename'];
@@ -108,9 +108,9 @@ function my_svgs_disable_real_mime_check( $data, $file, $filename, $mimes ) {
 add_filter( 'upload_mimes', function ( $mime_types ) {
     $mime_types['svg'] = 'image/svg+xml';
     $mime_types[ 'eps' ] = 'application/postscript';
-    $mime_types['json'] = 'application/json'; 
-    $mime_types['obj'] = 'model/obj'; 
-    $mime_types['fbx'] = 'model/fbx'; 
+    $mime_types['json'] = 'application/json';
+    $mime_types['obj'] = 'model/obj';
+    $mime_types['fbx'] = 'model/fbx';
     return $mime_types;
 } );
 
@@ -123,7 +123,7 @@ function SUD_register_nav_menus() {
   register_nav_menus( array(
       'primary' => __( 'Primary Menu', 'primary-menu' ),
       'footer' => __( 'Footer Menu', 'footer-menu' )
-  )); 
+  ));
 }
 add_action( 'after_setup_theme', 'SUD_register_nav_menus' );
 
@@ -168,7 +168,7 @@ remove_action('welcome_panel', 'wp_welcome_panel');
 /*-------------------------------------------------------------*/
 /*------------------------LOAD SCRIPTS-------------------------*/
 /*-------------------------------------------------------------*/
-function theme_add_scripts() 
+function theme_add_scripts()
 {
     $JsIncList = array(
         array('navi-js', 'navigation.js' ),
@@ -177,17 +177,17 @@ function theme_add_scripts()
         array('main-js', 'main.js' ),
     );
 
-    foreach ($JsIncList as $JsInc) 
+    foreach ($JsIncList as $JsInc)
     {
         wp_enqueue_script( $JsInc[0], get_template_directory_uri() . '/src/scripts/' . $JsInc[1], array('jquery'), THEME_VERSION, true );
     }
 
     /*------------------------------Send Global Variables---------------------------*/
-    $wnm_custom = array( 
-        'templateUrl' => get_template_directory_uri(), 
+    $wnm_custom = array(
+        'templateUrl' => get_template_directory_uri(),
         'sitename' => get_bloginfo('name'),
     );
-    
+
     $scriptToAdGlobal = array('main-js', 'partner-js' );
     foreach( $scriptToAdGlobal as $script ){
         wp_localize_script( $script, 'globalURL', $wnm_custom );
@@ -277,13 +277,13 @@ function lh_acf_save_post( $post_id ) {
     $headers = array('Content-Type: text/html; charset=UTF-8', 'Cc: agi@livelearninglabs.ch');//make it HTML
     $subject = 'SUD Collective | New '.$type.': '.$new_title;
     $link = get_edit_post_link( $post_id );
-    
+
     $body = '<div style="padding: 50px 40px; border-radius:30px;width: 500px; display:flex; flex-direction: column; justify-content:center; align-items:center; background-color:#F4F4F4; color:#3C1438;">';
     $body .= '<h3 style="text-align:center;"><b>Ein neuer '.$type.'-Post wurde eingereicht.</b></h3>';
     $body .= '<p  style="text-align:center;">Bitte überprüfen und publizieren:</p>';
     $body .= '<a href="'.$link.'"><div style="padding: 10px 20px; background-color:#942F6D; color:white; text-align:center;">Direkt zum neuen Beitrag -></div></a>';
     $body .= '</div>';
-    
+
     // send email
     wp_mail($to, $subject, $body, $headers );
   }
@@ -297,7 +297,7 @@ add_action( 'acf/save_post', 'lh_acf_save_post', 10, 1 );
 add_action('admin_init', function () {
   // Redirect any user trying to access comments page
   global $pagenow;
-   
+
   if ($pagenow === 'edit-comments.php') {
       wp_safe_redirect(admin_url());
       exit;
@@ -341,3 +341,23 @@ add_action('init', function () {
 
 require_once(dirname(__FILE__).'/extensions/api/partner.api.php');
 
+
+/*-------------------------------------------------------------*/
+/*----------------------- VERIFY NONCE ------------------------*/
+/*-------------------------------------------------------------*/
+
+function verify_nonce() {
+    $nonce = $_POST['my_nonce_field'];
+    $valid_nonce = wp_verify_nonce( $nonce, 'my_form_nonce' );
+
+    if ( ! $valid_nonce ) {
+        // The nonce is invalid; show an error message or redirect to a different page.
+        die();
+    }
+}
+
+add_action('wp_ajax_process_form_submission', 'process_form_submission');
+function process_form_submission() {
+    verify_nonce();
+    // Process the form submission safely
+}

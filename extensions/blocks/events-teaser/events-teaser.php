@@ -4,6 +4,7 @@ $anchor = '';
 if ( ! empty( $block['anchor'] ) ) {
     $anchor = 'id="' . esc_attr( $block['anchor'] ) . '" ';
 }
+$hideBlock = get_field('hide_block') ? 'display: none;' : '';
 
 // Create class attribute allowing for custom "className" and "align" values.
 $class_name = 'testimonial-block';
@@ -19,8 +20,8 @@ if ( ! empty( $block['align'] ) ) {
 $selection = get_field( 'selection' );
 
 $events = array();
-    
-if($selection === 'manual') { 
+
+if($selection === 'manual') {
     $events = get_field( 'events' ) ?: 'Choose comming up events ';
 }
 if($selection === 'next') {
@@ -34,11 +35,11 @@ if($selection === 'next') {
     if( !function_exists('event_order_by_date') ){
         function event_order_by_date($a, $b){
             if(!get_field( 'facts', $a->ID )['date'] || !get_field( 'facts', $b->ID )['date']  ){ return 1; }
-    
+
             return strtotime( str_replace( '/', '-', get_field( 'facts', $a->ID )['date'] ) ) < strtotime( str_replace( '/', '-', get_field( 'facts', $b->ID )['date'] ) ) ? -1 : 1;
         }
     }
-    
+
     uasort( $allEvents, 'event_order_by_date' );
 
     foreach( $allEvents as $singleEvent){
@@ -51,11 +52,11 @@ if($selection === 'next') {
 }
 ?>
 
-<div <?php echo $anchor; ?>class="<?php echo esc_attr( $class_name ); ?> event-teaser-container" style="">
+<div <?php echo $anchor; ?>class="<?php echo esc_attr( $class_name ); ?> event-teaser-container" style="<?php echo $hideBlock; ?>">
     <?php
     foreach($events as $event){
         $eventCard = new \sud\components\eventCard\Event_Card($event);
         echo $eventCard->html;
     }
     ?>
-</div>  
+</div>
