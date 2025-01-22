@@ -68,7 +68,7 @@ body {
 }
 
 .has-primary-color-color {
-  color: #942F6D;
+  color: #C44E97;
 }
 
 .has-secondary-color-color {
@@ -84,7 +84,7 @@ body {
 }
 
 .has-primary-color-background-color {
-  background-color: #942F6D;
+  background-color: #C44E97;
 }
 
 .has-secondary-color-background-color {
@@ -113,7 +113,7 @@ button {
   border-radius: 10px;
   color: white;
   padding: 5px 10px;
-  background-color: #942F6D;
+  background-color: #C44E97;
   border: 0;
 }
 button:hover {
@@ -316,7 +316,7 @@ ol li {
   padding: 15px 15px;
 }
 .SUD-ACF-Form .acf-form .acf-button {
-  background-color: #942F6D;
+  background-color: #C44E97;
   color: white;
   padding: 5px 20px;
   border-radius: 50px;
@@ -346,7 +346,7 @@ body {
 }
 
 a:link, a:visited {
-  color: #942F6D;
+  color: #C44E97;
   text-decoration: unset !important;
 }
 
@@ -384,7 +384,7 @@ a:hover {
 }
 .event-body .event-container .event-content h2 {
   margin: 20px 0;
-  color: #942F6D;
+  color: #C44E97;
 }
 @media (max-width: 1024px) {
   .event-body .event-container {
@@ -573,7 +573,7 @@ a:hover {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #942F6D;
+  background-color: #C44E97;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -611,7 +611,8 @@ a:hover {
 }
 
 #footer-container {
-  background-color: #942F6D;
+  background-color: #3C1438;
+  color: #C44E97;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -628,12 +629,16 @@ a:hover {
 #footer-container .footer-row-left {
   padding-right: 20px;
   min-width: 200px;
+  color: #C44E97;
 }
 @media (max-width: 1024px) {
   #footer-container .footer-row-left {
     width: 100%;
     padding-right: 0;
   }
+}
+#footer-container .footer-row-left h4 {
+  color: #C44E97 !important;
 }
 #footer-container .footer-row-mid {
   text-align: center;
@@ -655,12 +660,18 @@ a:hover {
   max-height: 100%;
   max-width: 100%;
 }
+#footer-container .footer-row-mid .footer-partner-container h4 {
+  color: #C44E97 !important;
+}
 @media (max-width: 1024px) {
   #footer-container .footer-row-mid {
     text-align: left;
     width: 100%;
     padding-left: 0;
   }
+}
+#footer-container .footer-row-mid h4 {
+  color: #C44E97 !important;
 }
 #footer-container .footer-row-right {
   padding-left: 20px;
@@ -673,6 +684,9 @@ a:hover {
     text-align: left;
     padding-left: 0;
   }
+}
+#footer-container .footer-row-right h4 {
+  color: #C44E97 !important;
 }
 
 /*# sourceMappingURL=index.css.map*/
