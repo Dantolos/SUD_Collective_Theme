@@ -5,7 +5,7 @@ transition-duration: 200ms;
 #navigation-container {
     position:fixed;
     width:100vw;
-   
+
     z-index:100;
     top:0;
     display: flex;
@@ -21,13 +21,14 @@ transition-duration: 200ms;
         max-height: 90px;
         max-width: 40vw;
         margin: 40px 5vw;
+        width: 100%;
     }
 
     .nav-icon {
         height:50px;
         width:50px;
     }
-    
+
     nav {
         margin: 20px 5vw;
         font-weight: bold;
@@ -38,14 +39,14 @@ transition-duration: 200ms;
         @include breakpoint( 'm' ){
             display: none;
         }
-       
+
     }
-   
+
 
 }
 
 .nav-big {
-    
+
     .nav-logo {
         display: block;
     }
@@ -56,10 +57,10 @@ transition-duration: 200ms;
 
 .nav-small {
     background-color: white;
-   
+
     .nav-logo {
         display: none;
-        
+
         top:0;
     }
     .nav-icon {
@@ -70,7 +71,7 @@ transition-duration: 200ms;
         @include breakpoint( 'm' ){
             margin: 8px 0;
         }
-        
+
     }
 }
 
@@ -80,8 +81,8 @@ transition-duration: 200ms;
     height:180px;
     width: 100vw;
     margin: 0;
-    
-    
+
+
     @include breakpoint( 'm' ){
         height:140px;
     }

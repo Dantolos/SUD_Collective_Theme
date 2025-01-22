@@ -491,6 +491,7 @@ a:hover {
   max-height: 90px;
   max-width: 40vw;
   margin: 40px 5vw;
+  width: 100%;
 }
 #navigation-container .nav-icon {
   height: 50px;
