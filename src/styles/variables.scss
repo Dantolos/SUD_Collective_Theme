@@ -1,10 +1,12 @@
-$primaryColor: #C44E97;
+$primaryColor: #942F6D;
 $secondaryColor: #D382B3;
-$thirdColor: #942F6D;
+$thirdColor: #C44E97;
 
+$ultralight: #EFD5E4;
 
 $thirdColorLight: lighten($thirdColor, 10%);
 
+$middarkColor: #651E4B;
 $darkColor: #3C1438;
 
 .has-primary-color-color {

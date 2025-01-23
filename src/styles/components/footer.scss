@@ -1,6 +1,6 @@
 #footer-container {
     background-color: $darkColor;
-    color: $primaryColor;
+    color: $secondaryColor;
 
     display: flex;
     flex-direction: row;
@@ -16,13 +16,13 @@
     .footer-row-left {
         padding-right:20px;
         min-width: 200px;
-         color: $primaryColor;
+         color: $secondaryColor;
         @include breakpoint('m'){
             width:100%;
             padding-right:0;
         }
         h4 {
-            color: $primaryColor !important;
+            color: $secondaryColor !important;
         }
     }
     .footer-row-mid {
@@ -46,7 +46,7 @@
                 }
             }
             h4 {
-                color: $primaryColor !important;
+                color: $secondaryColor !important;
             }
         }
 
@@ -56,7 +56,7 @@
             padding-left:0;
         }
         h4 {
-            color: $primaryColor !important;
+            color: $secondaryColor !important;
         }
     }
     .footer-row-right {
@@ -71,7 +71,7 @@
         }
 
         h4 {
-            color: $primaryColor !important;
+            color: $secondaryColor !important;
         }
     }
 

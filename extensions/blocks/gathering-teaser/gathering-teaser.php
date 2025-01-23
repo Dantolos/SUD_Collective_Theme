@@ -19,7 +19,7 @@ $hideBlock = get_field('hide_block') ? 'display: none;' : '';
           </div>
           <div class="gathering-right-container">
                <h3 class="has-primary-color-color"><?php echo get_field('title'); ?></h3>
-               <p class="has-secondary-color-color"><?php echo get_field('description') ?></p>
+               <p><?php echo get_field('description') ?></p>
 
                <?php
                if(get_field('infopoint')){
@@ -32,7 +32,7 @@ $hideBlock = get_field('hide_block') ? 'display: none;' : '';
                                    </div>
                                    <div class="infopoint-content">
                                         <h4 class="has-primary-color-color" style="font-family: 'mediasans-bold';"><?php echo $point['informations']['title']; ?></h4>
-                                        <p class="has-secondary-color-color"><?php echo $point['informations']['text']; ?></p>
+                                        <p><?php echo $point['informations']['text']; ?></p>
                                    </div>
                               </div>
                          <?php
