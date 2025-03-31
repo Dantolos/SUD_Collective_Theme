@@ -6,25 +6,25 @@
      display: flex;
      border-radius: 20px;
      padding: 20px;
-     align-items: center; 
+     align-items: flex-start;
      transition: all .5s;
 }
- 
+
 .program-row-time {
      width: 20%;
      margin-bottom:0;
 }
-.has_subcontent{ 
+.has_subcontent{
      cursor: pointer;
 }
 
 .program-row-content {
      margin-bottom:0;
-     width: 80%; 
+     width: 80%;
      position: relative;
      transition: all .2s;
 }
-.program-row-content h4 { font-family: "mediasans-bold" !important;}
+.program-row-content h4 { font-family: "mediasans-bold" !important; font-size:2em !important; }
 .program-row-time p, .program-row-content p { margin-bottom:0;  }
 .program-row-time p { font-size: 20px !important;}
 
@@ -33,22 +33,89 @@
      height: 0;
      opacity: 0;
      transition: all .2s;
+     margin:0;
+     transition: all 200ms ease;
 }
 .active-program-row > .program-row-subcontent {
      visibility: visible;
      height: auto;
      opacity: 1;
+     padding: 20px 0;
 }
 .program-arrow {
-     position: absolute;
-     width: 20px;
-     height: 20px;
-     right: 20px;
-     top:0; bottom:0;
-     margin: auto;
-     transition: all .2s;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 20px;
+    top:5px;
+    margin: auto;
+    transition: all .2s;
 }
 
 .active-program-row > .program-arrow {
      transform: rotate(180deg);
+}
+
+
+.programm-sessions-list {
+    //border-top: 1px solid #D382B3;
+    margin-top:20px;
+}
+.programm-sessions-item {
+    display: flex;
+    padding: 20px 0;
+    border-top: 1px solid #D382B3;
+
+}
+.programm-sessions-item-left {
+    width: 20%;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+.programm-sessions-item-left p{
+    color:#942F6D;
+
+}
+.programm-sessions-item-right {
+    width:80%;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+.programm-sessions-item-right h4 {
+    color: #C44E97;
+}
+
+@media only screen and (max-width: 600px) {
+    .program-row {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+    .program-row-content {
+         margin-bottom:0;
+         width: 100%;
+         position: relative;
+         transition: all .2s;
+    }
+    .program-row-content h4 {  max-width: 90%; font-size:1.6em !important; }
+    .program-row-time p, .program-row-content p { margin-bottom:0;  }
+     .program-row-time {width: 100%;}
+    .program-row-time p { font-size: 16px !important; }
+
+    .program-arrow {
+
+        top:0px;
+    }
+
+
+    .programm-sessions-item {
+        flex-direction: column;
+        margin-bottom:0;
+    }
+    .programm-sessions-item-left,.programm-sessions-item-right {
+        width: 100%;
+    }
+
 }

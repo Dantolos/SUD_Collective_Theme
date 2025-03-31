@@ -15,7 +15,7 @@ if( function_exists('acf_add_local_field_group') ):
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
-                         'width' => '', 
+                         'width' => '',
                          'class' => '',
                          'id' => '',
                     ),
@@ -174,6 +174,5 @@ if( function_exists('acf_add_local_field_group') ):
           'active' => true,
           'description' => '',
           'show_in_rest' => 0,
-     ) );
-
+     ) ) ;
 endif;
