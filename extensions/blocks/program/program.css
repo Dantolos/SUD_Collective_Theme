@@ -24,7 +24,7 @@
      position: relative;
      transition: all .2s;
 }
-.program-row-content h4 { font-family: "mediasans-bold" !important; font-size:2em !important; }
+.program-row-content h4 { font-family: "mediasans-bold" !important; font-size:1.8em !important; line-height:1.15em; }
 .program-row-time p, .program-row-content p { margin-bottom:0;  }
 .program-row-time p { font-size: 20px !important;}
 
@@ -85,9 +85,10 @@
 }
 .programm-sessions-item-right h4 {
     color: #C44E97;
+    line-height:1.15em;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
     .program-row {
         flex-direction: column;
         align-items: stretch;
