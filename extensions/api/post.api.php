@@ -13,7 +13,7 @@ function article_api($request) {
     $args = array(
         'post_type' => 'post',
         'posts_per_page' => isset($_GET['per_page']) ? $_GET['per_page'] : -1, // Add per_page parameter
-        'paged' => isset($_GET['page']) ? $_GET['page'] : 1, 
+        'paged' => isset($_GET['page']) ? $_GET['page'] : 1,
         'date_query' => array(
             array(
                 'after' => $after ? $after : '',
@@ -31,13 +31,13 @@ function article_api($request) {
     foreach ( $posts as $post ) {
         $published = str_replace( ' ', 'T', $post->post_date);
         $updated = str_replace( ' ', 'T', $post->post_date);
-      
-        
+
+
         //if(get_field('', $post->ID) == false){ continue; }
         $blocks = parse_blocks($post->post_content);
         $clearBlock = '';
 
-        
+
 
         foreach ( $blocks as $block ) {
             switch ($block['blockName']) {
@@ -55,7 +55,7 @@ function article_api($request) {
                     $clearBlock .= $block['innerHTML'];
                     $clearBlock .= '</div>';
                     break;
-                    
+
                 //Bilder
                 case 'core/image':
                     $imageURL = wp_get_attachment_image_url($block['attrs']['id']);
@@ -63,11 +63,11 @@ function article_api($request) {
                     $clearBlock .= $imageURL;
                     $clearBlock .= '</div>';
                     break;
-                
+
                 default:
                     $clearBlock .= $block['innerHTML'];
                     break;
-                    
+
             }
         }
 
@@ -91,18 +91,21 @@ function article_api($request) {
 //HOOK
 add_action( 'rest_api_init', function () {
     register_rest_route( 'sud/v1', '/article/', array(
-        'methods' => 'GET',
-        'callback' => 'article_api',
-        'args' => array(
-            'after' => array(
-                'type' => 'string',
-                'description' => 'Limit results to those after a certain date and time (ISO8601 format)',
-                'required' => false,
-            ),
-            'before' => array(
-                'type' => 'string',
-                'description' => 'Limit results to those before a certain date and time (ISO8601 format)',
-                'required' => false,
+        array(
+            'methods'             => 'GET',
+            'callback'            => 'article_api',
+            'permission_callback' => '__return_true',
+            'args'                => array(
+                'after'  => array(
+                    'type'        => 'string',
+                    'description' => 'Limit results to those after a certain date and time (ISO8601 format)',
+                    'required'    => false,
+                ),
+                'before' => array(
+                    'type'        => 'string',
+                    'description' => 'Limit results to those before a certain date and time (ISO8601 format)',
+                    'required'    => false,
+                ),
             ),
         ),
     ) );

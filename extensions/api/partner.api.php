@@ -17,7 +17,7 @@ function partner_api($request) {
     $data = array();
 
     foreach ( $posts as $post ) {
-        
+
         // filter map relevant partners by param "map"
         if( isset($_GET['map'])  ){
             if( get_field('map', $post->ID ) === false ){
@@ -27,7 +27,7 @@ function partner_api($request) {
 
         $published = str_replace( ' ', 'T', $post->post_date);
         $updated = str_replace( ' ', 'T', $post->post_date);
-        
+
         $terms = [];
 
         $partner_categories = wp_get_post_terms($post->ID, 'partner_category');
@@ -35,11 +35,11 @@ function partner_api($request) {
         if( !empty($partner_categories) ){
             foreach( $partner_categories as $key => $category ){
 					$terms['partner_categories'][$key]['id'] = $category->term_id;
-					$terms['partner_categories'][$key]['name'] = $category->name; 
+					$terms['partner_categories'][$key]['name'] = $category->name;
 					$terms['partner_categories'][$key]['slug'] = $category->slug;
             }
         }
- 
+
         $ressources = wp_get_post_terms($post->ID, 'ressources');
 
         if( !empty($ressources) ){
@@ -53,7 +53,7 @@ function partner_api($request) {
         $type_of_businesses = wp_get_post_terms($post->ID, 'type_of_business');
 
         if( !empty($type_of_businesses) ){
-            foreach( $type_of_businesses as $key => $type_of_business ){ 
+            foreach( $type_of_businesses as $key => $type_of_business ){
 					$terms['type_of_business'][$key]['id'] = $type_of_business->term_id;
 					$terms['type_of_business'][$key]['name'] = $type_of_business->name;
 					$terms['ressources'][$key]['slug'] = $ressource->slug;
@@ -76,8 +76,8 @@ function partner_api($request) {
             'description' => get_field('description', $post->ID),
             'logo' => get_field('logo', $post->ID)['url'],
             'website' => get_field('website', $post->ID),
-            'terms' => $terms, 
-            
+            'terms' => $terms,
+
             //'raw' => parse_blocks($post->post_content), //TO DELETE
         );
     }
@@ -101,5 +101,6 @@ add_action( 'rest_api_init', function () {
                 'required' => false,
             ),
         ),
+        'permission_callback' => '__return_true'
     ) );
 } );

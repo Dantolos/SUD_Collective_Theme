@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <?php wp_head();
-     
+
     ?>
     <style>
       @font-face {
@@ -50,8 +50,83 @@
   <body <?php body_class(); ?>>
     <?php
       //add navigationbar
-      $navigationBar = new \sud\components\navigation\Navigationbar;
-      echo $navigationBar->html;
-    ?>  
+      //$navigationBar = new \sud\components\navigation\Navigationbar;
+      //echo $navigationBar->html;
+    ?>
+
+    <div class="header-wrapper">
+
+         <a href="<?php echo esc_url( get_home_url() ); ?>" style="max-width: 30%;">
+              <div class="header-logo"><img src="<?php echo get_field('logo', 'option');?>" alt="startup days logo" /></div>
+         </a>
+
+
+         <div class="header-meta-menu">
+              <?php
+              if( get_field('meta_menu', 'option') ){
+                   echo '<ul>';
+                   foreach(get_field('meta_menu', 'option') as $metamenuItem){
+                        switch ($metamenuItem["acf_fc_layout"]) {
+                             case 'external_link':
+                                  echo '<li>';
+                                  echo '<a href="'.$metamenuItem["link"].'" target="_blank">';
+                                  echo $metamenuItem['label'];
+                                  echo '</a>';
+                                  echo '</li>';
+                                  break;
+                             default:
+                                  echo '<li>';
+                                  echo '<a href="'.$metamenuItem["link"].'" >';
+                                  echo $metamenuItem['label'];
+                                  echo '</a>';
+                                  echo '</li>';
+                                  break;
+                        }
+                   }
+                   echo '</ul>';
+              }
+
+              ?>
+         </div>
+
+         <div class="header-menu">
+              <?php
+              $menuArgs = array(
+                   'menu'              => "Header Menu",
+                   'menu_class'        => "desktop-menu",
+                   'container'         => "nav",
+                   'container_class'   => "se2-navigation desktop-menu-content ",
+                   'walker'            => new Walker_Nav_Primary()
+              );
+              if($menuArgs){
+                   wp_nav_menu( $menuArgs );
+              }
+
+              if(get_field('header_cta', 'option')){
+                   echo '<a class="header-cta-desktop" href="'.get_field('cta_button', 'option')['url'].'" target="'.get_field('cta_button', 'option')['target'].'"><div class="header-cta btn-secondary btn-s">'.get_field('cta_button', 'option')['title'].'</div></a>';
+              }
+              echo '<div class="burger-menu-trigger"><img src="'.get_template_directory_uri().'/assets/burger-menu.svg" alt="Burger Menu" /></div>';
+
+              echo '<div class="burger-menu-wrapper">';
+                   echo '<div class="burger-menu-closer"><img src="'.get_template_directory_uri().'/assets/close-cross-white.svg" alt="Close Icon" /></div>';
+                   echo '<div class="burger-menu-sud-icon"><img src="'.get_template_directory_uri().'/assets/sud_icon-white.svg" alt="Close Icon" /></div>';
+
+                   wp_nav_menu(array(
+                        'menu'              => "Header Menu",
+                        'menu_class'        => "burger-menu",
+                        'container'         => "nav",
+                        'container_class'   => "se2-navigation menu-burger-content ",
+                        'walker' => new Burger_Menu_Walker(),
+                   ));
+
+                   if(get_field('header_cta', 'option')){
+                        echo '<div class="header-cta-wrapper">';
+                        echo '<a class="header-cta" href="'.get_field('cta_button', 'option')['url'].'" target="'.get_field('cta_button', 'option')['target'].'"><div class="header-cta btn-secondary btn-s btn-neg">'.get_field('cta_button', 'option')['title'].'</div></a>';
+                        echo '</div>';
+                   }
+              echo '</div>';
+              ?>
+         </div>
+    </div>
 
     <div id="main-container">
