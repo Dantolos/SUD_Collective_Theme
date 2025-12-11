@@ -1,0 +1,31 @@
+.insight-teaser-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.insight-card {
+    width: 27%;
+    min-width: 300px;
+    margin: 3%;
+}
+
+.insight-card > h3 {
+    color:#942F6D;
+    margin-bottom: 10px;
+}
+
+.insight-card > img {
+    max-width: 50%;
+    margin:10% 25%;
+}
+
+button.extern-insight::before {
+    font-family: "dashicons";
+    content: "\f504";
+    vertical-align: middle;
+    font-size: 16px;
+    margin-right: 10px;
+}
