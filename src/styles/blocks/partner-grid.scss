@@ -1,0 +1,30 @@
+.partner-grid-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.partner-card {
+    position: relative;
+
+    min-height:200px;
+    margin: 1%;
+    border-radius: 20px;
+}
+
+.partner-card > img {
+    position: absolute;
+    margin: auto;
+    top:0; left:0; right:0; bottom:0;
+    max-width:70%;
+    max-height:70%;
+    min-width:20%;
+    min-height:20%;
+}
+
+.partner-card:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+}

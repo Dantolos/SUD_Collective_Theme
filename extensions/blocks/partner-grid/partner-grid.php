@@ -42,29 +42,34 @@ if( get_field('order') ){
 
 <div <?php echo $anchor; ?>class="<?php echo esc_attr( $class_name ); ?> partner-grid-container" style="<?php echo $hideBlock; ?>">
     <?php
+	//var_dump($partners);
     if( is_array($partners)) {
         foreach($partners as $partner){
-            $filtered = true;
+
+            $filtered = false;
 
             //PARTNER FILTER ACF
             $partnerCats = wp_get_post_terms($partner, 'partner_category');
+
             if($category){
                 //if category is selected, check if term exists in partner post
+
                 if (!empty($partnerCats)) {
                     foreach($partnerCats as $partnerCat){
                         if( $partnerCat->term_id === $category){
-                            $filtered = false;
+                            $filtered = true;
                         }
                     }
                 }
             }else {
                 //if no category is selected, take all the partners without a categorie related
                 if (empty($partnerCats)) {
-                    $filtered = false;
+                    $filtered = true;
                 }
             }
 
             if($filtered){continue;}
+			if(!get_field('logo', $partner)['url'] || !get_field('company', $partner)){continue;}
 
             echo '<div class="partner-card" data-partner="'.$partner.'" style="min-width:'.$minWidth.'px; width:'.$columnWidht.'%; background-color:'. get_field('background_color').';" >';
                 echo '<img src="'.esc_url(get_field('logo', $partner)['url']).'" alt="'.esc_attr(get_field('company', $partner)).'" />';
