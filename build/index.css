@@ -889,6 +889,13 @@ body {
 }
 #footer-wrapper .footer-copyright .footer-copyright-container .footer-sm-icons {
   display: flex;
+  gap: 10px;
+}
+#footer-wrapper .footer-copyright .footer-copyright-container .footer-sm-icons img {
+  transition: all 200ms ease-in-out;
+}
+#footer-wrapper .footer-copyright .footer-copyright-container .footer-sm-icons img:hover {
+  transform: scale(1.1);
 }
 
 .insight-teaser-container {

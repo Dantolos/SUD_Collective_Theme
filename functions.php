@@ -146,11 +146,20 @@ require_once dirname( __FILE__ ) . '/extensions/blocks/blocks-register.php';
 /*---------------------- FILE TYPE SUPPORT --------------------*/
 /*-------------------------------------------------------------*/
 
+// Disable strict mime check for SVG (and other allowed types).
 add_filter( 'wp_check_filetype_and_ext', 'sud_svgs_disable_real_mime_check', 10, 4 );
 function sud_svgs_disable_real_mime_check( $data, $file, $filename, $mimes ) {
     $wp_filetype = wp_check_filetype( $filename, $mimes );
-    return compact( 'ext', 'type', 'proper_filename' );
+
+    // If WordPress couldn’t detect a type, keep existing data.
+    if ( ! empty( $wp_filetype['ext'] ) && ! empty( $wp_filetype['type'] ) ) {
+        $data['ext']  = $wp_filetype['ext'];
+        $data['type'] = $wp_filetype['type'];
+    }
+
+    return $data;
 }
+
 
 add_filter( 'upload_mimes', function( $mime_types ) {
     return array_merge( $mime_types, array(
