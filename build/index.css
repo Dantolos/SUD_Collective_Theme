@@ -67,6 +67,11 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 
+.wp-block-social-links a {
+  margin: 0 !important;
+  font-size: unset;
+}
+
 .has-primary-color-color {
   color: #942F6D;
 }
@@ -278,7 +283,7 @@ ol li {
 }
 
 .acf-form-success-message {
-  background-color: green;
+  background-color: #E9FCE6;
   border-radius: 50px;
   margin-top: 20px;
   padding: 15px 150px;
@@ -288,7 +293,7 @@ ol li {
   justify-content: center;
 }
 .acf-form-success-message p {
-  color: white !important;
+  color: green !important;
   margin-bottom: 0;
 }
 
@@ -298,10 +303,14 @@ ol li {
   align-items: center;
   flex-direction: column;
 }
+.SUD-ACF-Form .acf-field-group .acf-input .acf-fields {
+  border-radius: 15px;
+}
 .SUD-ACF-Form .acf-form {
   width: 95vw;
   max-width: 1200px;
   margin: 50px 0;
+  border-radius: 10px;
 }
 .SUD-ACF-Form .acf-form .-border {
   border: none !important;
@@ -314,6 +323,7 @@ ol li {
   border: 0px solid white;
   background-color: rgba(148, 47, 109, 0.06);
   padding: 15px 15px;
+  border-radius: 10px;
 }
 .SUD-ACF-Form .acf-form .acf-button {
   background-color: #942F6D;
