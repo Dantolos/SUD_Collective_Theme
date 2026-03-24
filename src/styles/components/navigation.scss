@@ -106,6 +106,8 @@
     .burger-menu-trigger {
         display: block;
         cursor: pointer;
+        width: 40px;
+        height:40px;
     }
 
     .open {
@@ -138,8 +140,10 @@
             display: flex;
             justify-content: center;
             margin-bottom: 50px;
+
             img {
                 width: 80px;
+
             }
         }
 
@@ -152,8 +156,20 @@
             a {
                 margin: 0;
             }
+            div {
+              border: none;
+
+            }
+
             .header-cta {
-                margin: 0;
+                background-color: white;
+                font-family: "Media Sans" !important;
+                margin-left:0;
+
+                &:hover {
+                    background-color:#EFD5E4;
+                    color: #942F6D;
+                }
             }
         }
 
@@ -164,6 +180,7 @@
             &::-webkit-scrollbar {
                 width: 0;
             }
+
         }
 
         .burger-menu {

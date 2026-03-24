@@ -16,17 +16,23 @@ function register_acf_blocks() {
 
     register_block_type( __DIR__ . '/program' );
     require_once( __DIR__ . '/program/program.acf.php' );
+    wp_enqueue_script(
+		'program-block-script',
+		get_template_directory_uri() . '/extensions/blocks/program/program.js',
+		[],
+		null,
+		true
+	);
 
     register_block_type( __DIR__ . '/boxes' );
     require_once( __DIR__ . '/boxes/boxes.acf.php' );
-    
+
     register_block_type( __DIR__ . '/gathering-teaser' );
     require_once( __DIR__ . '/gathering-teaser/gathering-teaser.acf.php' );
 
     register_block_type( __DIR__ . '/speaker-grid' );
     require_once( __DIR__ . '/speaker-grid/speaker-grid.acf.php' );
-    
+
     register_block_type( __DIR__ . '/working-group' );
     require_once( __DIR__ . '/working-group/working-group.acf.php' );
 }
-
