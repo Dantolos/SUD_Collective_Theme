@@ -94,7 +94,7 @@
             $footerButton = get_field('newsletter_button','option');
 
             if($footerButton){
-                echo '<a href="" >';
+                echo '<a href="'.$footerButton["title"].'" target="'.$footerButton["target"].'" >';
                 echo '<div class="footer-newsletter-button">'.$footerButton["title"].'</div>';
                 echo '</a>';
             }
